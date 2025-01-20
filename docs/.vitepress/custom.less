@@ -1,0 +1,36 @@
+:root {
+	--vp-code-copy-copied-text-content: '复制成功';
+	--vt-font-family-base:: Quotes, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  }
+body{
+	font-family: var(--vt-font-family-base);
+}
+#app a {
+	text-decoration: none;
+	.VPDoc{
+		line-height: 1.7;
+	}
+	.VPDoc li {
+		position: relative;
+		margin: 1px 0;
+	}
+}
+
+.VPSidebarItem.level-1 {
+	&.is-active > .item .link > .text {
+		font-weight: 900;
+	}
+
+	&.is-link > .item > .link:hover .text {
+		font-weight: 600;
+	}
+}
+#VPSidebarNav {
+	.VPSidebarItem.level-0 {
+		padding: 0;
+	}
+	.group + .group {
+		border: none;
+		padding-top: 16px;
+	}
+}
