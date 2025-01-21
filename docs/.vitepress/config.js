@@ -94,6 +94,10 @@ export default defineConfig({
 							text: "侦听器",
 							link: "watchers",
 						},
+						{
+							text:"模板引用",
+							link:"template-refs"
+						}
 					],
 				},
 			],
