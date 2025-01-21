@@ -67,26 +67,33 @@ export default defineConfig({
 							link: "computed",
 						},
 						{
-							text:"类与样式邦定",
-							link:"class-and-style"
+							text: "类与样式邦定",
+							link: "class-and-style",
 						},
 						{
-							text:"条件渲染",
-							link:"conditional"
+							text: "条件渲染",
+							link: "conditional",
 						},
 						{
-							text:"列表渲染",
-							link:"list"
-						},{
-							text:"事件处理",
-							link:"event-handling"
-						},{
-							text:"表单输入绑定",
-							link:"forms"
-						},{
-							text:"生命周期钩子",
-							link:'lifecycle'
-						}
+							text: "列表渲染",
+							link: "list",
+						},
+						{
+							text: "事件处理",
+							link: "event-handling",
+						},
+						{
+							text: "表单输入绑定",
+							link: "forms",
+						},
+						{
+							text: "生命周期钩子",
+							link: "lifecycle",
+						},
+						{
+							text: "侦听器",
+							link: "watchers",
+						},
 					],
 				},
 			],
@@ -141,9 +148,9 @@ export default defineConfig({
 		languageAlias: {
 			template: "html",
 		},
-		theme:{
-			light:"github-light",
-			dark:"github-dark"
+		theme: {
+			light: "github-light",
+			dark: "github-dark",
 		},
 		// theme:"github-dark",
 		// theme: {

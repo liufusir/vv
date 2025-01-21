@@ -193,7 +193,7 @@ Vue 默认按照“就地更新”的策略来更新通过`v-for` 渲染的元�
 ```
 
 <CustomBlock Dcontent="注意" class="tip">
-<p><code>key</code> 在这里是一个通过<code>v-bind</code> 绑定的特殊 attribute。请不要和<a href="https://cn.vuejs.org/guide/essentials/list#v-for-with-an-object">在<code>v-for</code> 中使用对象</a>里所提到的对象属性名相混淆。</p>
+<p><code>key</code> 在这里是一个通过<code>v-bind</code> 绑定的特殊 attribute。请不要和<a href="/guide/essentials/list#v-for-with-an-object">在<code>v-for</code> 中使用对象</a>里所提到的对象属性名相混淆。</p>
 </CustomBlock>
 
 [推荐](https://cn.vuejs.org/style-guide/rules-essential.html#use-keyed-v-for)在任何可行的时候为`v-for` 提供一个`key` attribute，除非所迭代的 DOM 内容非常简单 (例如：不包含组件或有状态的 DOM 元素)，或者你想有意采用默认行为来提高性能。

@@ -7,7 +7,7 @@
 <script setup>
 import { ref, } from "vue";
 const props = defineProps({
-	Dclass: String, //tip 注意 
+	Dclass: String, //tip 注意， warning 警告（谨慎使用）
 	Dcontent: String, 
 });
 </script>
