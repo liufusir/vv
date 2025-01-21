@@ -5,10 +5,10 @@
 	</div>
 </template>
 <script setup>
-import { ref, } from "vue";
+import { ref } from "vue";
 const props = defineProps({
-	Dclass: String, //tip 注意， warning 警告（谨慎使用）
-	Dcontent: String, 
+	Dclass: String, //tip 提示（ TIP 注意）， warning 警告（谨慎使用）
+	Dcontent: String,
 });
 </script>
 <style lang="less">
@@ -16,6 +16,8 @@ const props = defineProps({
 	--vt-c-yellow: #ffc517;
 	--vt-c-bg-soft: #f9f9f9;
 	--vt-c-brand: #42b883;
+	--vt-c-red:#ed3c50;
+	--vt-c-yellow:#ffc517;
 }
 .VPDoc .custom-block code {
 	background: var(--vp-code-bg);
@@ -60,6 +62,14 @@ const props = defineProps({
 		&:before {
 			color: var(--vt-c-brand);
 		}
+	}
+	&.custom-block.danger {
+		border: 1px solid var(--vt-c-red);
+	}
+
+	&.custom-block.danger .custom-block-title,
+	&.custom-block.danger:before {
+		color: var(--vt-c-red);
 	}
 
 	&:before {
