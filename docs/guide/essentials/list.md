@@ -142,7 +142,7 @@ const myObject = reactive({
 
 ## `v-for` 与`v-if`
 
-<CustomBlock Dclass="warning" Dcontent="注意">
+<CustomBlock class="warning" Dcontent="注意">
 <p>同时使用<code>v-if</code> 和<code>v-for</code> 是不推荐的，因为这样二者的优先级不明显。请转阅<a href="https://cn.vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for">风格指南</a>查看更多细节。</p>
 </CustomBlock>
 
@@ -192,7 +192,7 @@ Vue 默认按照“就地更新”的策略来更新通过`v-for` 渲染的元�
 </template>
 ```
 
-<CustomBlock Dcontent="注意" Dclass="tip">
+<CustomBlock Dcontent="注意" class="tip">
 <p><code>key</code> 在这里是一个通过<code>v-bind</code> 绑定的特殊 attribute。请不要和<a href="https://cn.vuejs.org/guide/essentials/list#v-for-with-an-object">在<code>v-for</code> 中使用对象</a>里所提到的对象属性名相混淆。</p>
 </CustomBlock>
 

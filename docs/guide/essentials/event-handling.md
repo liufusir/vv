@@ -125,7 +125,7 @@ function warn(message, event) {
 <!-- 例如：事件处理器不来自子元素 -->
 <div @click.self="doThat">...</div>
 ```
-<CustomBlock Dcontent="TIP" Dclass="tip">
+<CustomBlock Dcontent="TIP" class="tip">
 <p>使用修饰符时需要注意调用顺序，因为相关代码是以相同的顺序生成的。因此使用 <code>@click.prevent.self</code> 会阻止<strong>元素及其子元素的所有点击事件的默认行为</strong>，而 <code>@click.self.prevent</code> 则只会阻止对元素本身的点击事件的默认行为。</p>
 </CustomBlock>
 
@@ -145,7 +145,7 @@ function warn(message, event) {
 ```
 `.passive` 修饰符一般用于触摸事件的监听器，可以用来[改善移动端设备的滚屏性能](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#%E4%BD%BF%E7%94%A8_passive_%E6%94%B9%E5%96%84%E6%BB%9A%E5%B1%8F%E6%80%A7%E8%83%BD)。
 
-<CustomBlock Dcontent="TIP" Dclass="tip">
+<CustomBlock Dcontent="TIP" class="tip">
 <p>请勿同时使用 <code>.passive</code> 和 <code>.prevent</code>，因为 <code>.passive</code> 已经向浏览器表明了你不想阻止事件的默认行为。如果你这么做了，则 <code>.prevent</code> 会被忽略，并且浏览器会抛出警告。</p>
 </CustomBlock>
 
@@ -186,7 +186,7 @@ Vue 为一些常用的按键提供了别名：
 - `.shift`
 - `.meta`
 
-<CustomBlock Dcontent="注意" Dclass="tip">
+<CustomBlock Dcontent="注意" class="tip">
 <p>在 Mac 键盘上，meta 是 Command 键 (⌘)。在 Windows 键盘上，meta 键是 Windows 键 (⊞)。在 Sun 微机系统键盘上，meta 是钻石键 (◆)。在某些键盘上，特别是 MIT 和 Lisp 机器的键盘及其后代版本的键盘，如 Knight 键盘，space-cadet 键盘，meta 都被标记为“META”。在 Symbolics 键盘上，meta 也被标识为“META”或“Meta”。</p>
 </CustomBlock>
 
@@ -200,7 +200,7 @@ Vue 为一些常用的按键提供了别名：
 <div @click.ctrl="doSomething">Do something</div>
 ```
 
-<CustomBlock Dcontent="TIP" Dclass="tip">
+<CustomBlock Dcontent="TIP" class="tip">
 <p>请注意，系统按键修饰符和常规按键不同。与 <code>keyup</code> 事件一起使用时，该按键必须在事件发出时处于按下状态。换句话说，<code>keyup.ctrl</code> 只会在你仍然按住 <code>ctrl</code> 但松开了另一个键时被触发。若你单独松开 <code>ctrl</code> 键将不会触发。</p>
 </CustomBlock>
 

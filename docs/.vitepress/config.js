@@ -80,6 +80,9 @@ export default defineConfig({
 						},{
 							text:"事件处理",
 							link:"event-handling"
+						},{
+							text:"表单输入绑定",
+							link:"forms"
 						}
 					],
 				},
@@ -136,7 +139,7 @@ export default defineConfig({
 			template: "html",
 		},
 		theme:{
-			light:"github-dark",
+			light:"github-light",
 			dark:"github-dark"
 		},
 		// theme:"github-dark",

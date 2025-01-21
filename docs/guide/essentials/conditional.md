@@ -97,7 +97,7 @@ v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的
 
 ## `v-if` 和 `v-for​`
 
-<CustomBlock Dclass="warning" Dcontent="警告">
+<CustomBlock class="warning" Dcontent="警告">
         <p>同时使用 <code>v-if</code> 和 <code>v-for</code> 是不推荐的，因为这样二者的优先级不明显。请查看<a href="https://cn.vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for">风格指南</a>获得更多信息。</p>
 </CustomBlock>
 
