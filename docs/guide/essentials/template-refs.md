@@ -1,3 +1,14 @@
+<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const detailsElements = document.querySelectorAll('details')
+  detailsElements.forEach((element) => {
+    element.className = ''
+  })
+})
+</script>
+
 # 模板引用
 
 虽然 Vue 的声明性渲染模型为你抽象了大部分对 DOM 的直接操作，但在某些情况下，我们仍然需要直接访问底层 DOM 元素。要实现这一点，我们可以使用特殊的 `ref` attribute：
@@ -29,7 +40,41 @@ onMounted(() => {
 ```
 
 
-3.5 前的用法
+::: details 3.5 前的用法 
+在 3.5 之前的版本尚未引入 `useTemplateRef()`，我们需要声明一个与模板里 ref attribute 匹配的引用：
+
+```vue
+<script setup>
+import { ref, onMounted } from 'vue'
+
+// 声明一个 ref 来存放该元素的引用
+// 必须和模板里的 ref 同名
+const input = ref(null)
+
+onMounted(() => {
+  input.value.focus()
+})
+</script>
+
+<template>
+  <input ref="input" />
+</template>
+```
+如果不使用 `<script setup>`，需确保从 `setup()` 返回 ref：
+
+```js
+export default {
+  setup() {
+    const input = ref(null)
+    // ...
+    return {
+      input
+    }
+  }
+}
+```
+:::
+
 注意，你只可以 __在组件挂载后__ 才能访问模板引用。如果你想在模板中的表达式上访问 `input`，在初次渲染时会是 `null`。这是因为在初次渲染前这个元素还不存在呢！
 
 如果你需要侦听一个模板引用 ref 的变化，确保考虑到其值为 `null` 的情况：
@@ -75,7 +120,7 @@ onMounted(() => console.log(itemRefs.value))
 ## 函数模板引用​
 除了使用字符串值作名字，`ref` attribute 还可以绑定为一个函数，会在每次组件更新时都被调用。该函数会收到元素引用作为其第一个参数：
 
-``template
+```template
 <input :ref="(el) => { /* 将 el 赋值给一个数据属性或 ref 变量 */ }">
 ```
 注意我们这里需要使用动态的 `:ref` 绑定才能够传入一个函数。当绑定的元素被卸载时，函数也会被调用一次，此时的 `el` 参数会是 `null`。你当然也可以绑定一个组件方法而不是内联函数。

@@ -146,9 +146,9 @@ bun run build
 </script>
 ```
 
-<CustomBlock Dcontent="TIP" class="tip">
-<p>本指南中许多关于组合式 API 的例子将使用 <code>&lt;script setup&gt;</code> 语法，这需要构建工具。如果你打算在没有构建步骤的情况下使用组合式 API，请参考 <a href="/api/composition-api-setup.html"><code>setup()</code> 选项</a>的用法。</p>
-</CustomBlock>
+::: tip TIP
+本指南中许多关于组合式 API 的例子将使用 `<script setup>` 语法，这需要构建工具。如果你打算在没有构建步骤的情况下使用组合式 API，请参考 [`setup()` 选项](/api/composition-api-setup.html)的用法。
+:::
 
 ## 使用 ES 模块构建版本 ​
 

@@ -5,7 +5,6 @@ outline: [2, 3]
 <script setup>
     import {ref} from 'vue'
     import Demo from '/.vitepress/components/Demo.vue'
-    import CustomBlock from '/.vitepress/components/CustomBlock.vue'
     const message = '';
     const checked = ref(false);
     const checkedNames = ref([]);
@@ -33,9 +32,9 @@ outline: [2, 3]
 
 文本类型的 `<input>` 和 `<textarea>` 元素会绑定 `value` property 并侦听 `input` 事件； `<input type="checkbox">` 和 `<input type="radio">` 会绑定 `checked` property 并侦听 `change` 事件； `<select>` 会绑定 `value` property 并侦听 `change` 事件。
 
-<CustomBlock class="tip" Dcontent="注意">
-<p><code>v-model</code> 会忽略任何表单元素上初始的 <code>value</code>、<code>checked</code> 或 <code>selected</code> attribute。它将始终将当前绑定的 JavaScript 状态视为数据的正确来源。你应该在 JavaScript 中使用<a href="https://cn.vuejs.org/api/reactivity-core.html#reactivity-api-core">响应式系统的 API</a>来声明该初始值。</p>
-</CustomBlock>
+::: tip 注意
+`v-model` 会忽略任何表单元素上初始的 `value` 、`checked` 或 `selected` attribute。它将始终将当前绑定的 JavaScript 状态视为数据的正确来源。你应该在 JavaScript 中使用[响应式系统的 API](https://cn.vuejs.org/api/reactivity-core.html#reactivity-api-core)来声明该初始值。
+:::
 
 ## 基本用法
 
@@ -51,9 +50,9 @@ outline: [2, 3]
 <input placeholder="edit me" v-model="message"/>
 </Demo>
 
-<CustomBlock class="tip" Dcontent="注意">
-<p>对于需要使用 <a href="https://en.wikipedia.org/wiki/Input_method">IME</a> 的语言 (中文，日文和韩文等)，你会发现 <code>v-model</code> 不会在 IME 输入还在拼字阶段时触发更新。如果你的确想在拼字阶段也触发更新，请直接使用自己的 <code>input</code> 事件监听器和 <code>value</code> 绑定而不要使用 <code>v-model。</code></p>
-</CustomBlock>
+::: tip 注意
+对于需要使用 [IME](https://en.wikipedia.org/wiki/Input_method)) 的语言 (中文，日文和韩文等)，你会发现 `v-model` 不会在 IME 输入还在拼字阶段时触发更新。如果你的确想在拼字阶段也触发更新，请直接使用自己的 `input` 事件监听器和 `value` 绑定而不要使用 `v-model`。
+:::
 
 ### 多行文本 ​
 
@@ -173,9 +172,10 @@ const checkedNames = ref([]);
   <option>C</option>
 </select>
 </Demo>
-<CustomBlock class="tip" Dcontent="注意">
-<p>如果 <code>v-model</code> 表达式的初始值不匹配任何一个选择项，<code>&lt;select></code> 元素会渲染成一个“未选择”的状态。在 iOS 上，这将导致用户无法选择第一项，因为 iOS 在这种情况下不会触发一个 change 事件。因此，我们建议提供一个空值的禁用选项，如上面的例子所示。</p>
-</CustomBlock>
+
+::: tip 注意
+如果 `v-model` 表达式的初始值不匹配任何一个选择项，`<select>` 元素会渲染成一个“未选择”的状态。在 iOS 上，这将导致用户无法选择第一项，因为 iOS 在这种情况下不会触发一个 change 事件。因此，我们建议提供一个空值的禁用选项，如上面的例子所示
+::: 
 
 多选 (值绑定到一个数组)：
 
@@ -260,9 +260,9 @@ const options = ref([
   :false-value="dynamicFalseValue" />
 ```
 
-<CustomBlock class="tip" Dcontent="注意">
-<p><code>true-value</code> 和 <code>false-value</code> attributes 不会影响 <code>value</code> attribute，因为浏览器在表单提交时，并不会包含未选择的复选框。为了保证这两个值 (例如：“yes”和“no”) 的其中之一被表单提交，请使用单选按钮作为替代。</p>
-</CustomBlock>
+::: tip 注意
+`true-value` 和 `false-value` attributes 不会影响 `value` attribute，因为浏览器在表单提交时，并不会包含未选择的复选框。为了保证这两个值 (例如：“yes”和“no”) 的其中之一被表单提交，请使用单选按钮作为替代。
+:::
 
 ### 单选按钮 ​
 
