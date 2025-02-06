@@ -86,6 +86,9 @@ export default defineConfig({
 						},{
                             text:'表单输入绑定',
                             link:"forms"
+                        },{
+                            text:'生命周期',
+                            link:'lifecycle'
                         }
 					],
 				},
