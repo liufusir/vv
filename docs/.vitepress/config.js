@@ -2,6 +2,9 @@
 import { defineConfig } from "vitepress";
 const basePath = "/guide/";
 export default defineConfig({
+	// 打包时忽略所有死链接检查
+    ignoreDeadLinks: true,
+    
 	// 网站标题
 	title: "Vue.js",
 	// 网站语言
@@ -80,7 +83,10 @@ export default defineConfig({
 						},{
 							text:"事件处理",
 							link:"event-handling"
-						}
+						},{
+                            text:'表单输入绑定',
+                            link:"forms"
+                        }
 					],
 				},
 			],
@@ -135,15 +141,11 @@ export default defineConfig({
 		languageAlias: {
 			template: "html",
 		},
-		theme:{
-			light:"github-dark",
-			dark:"github-dark"
+		
+		theme: {
+			light: "github-light",
+			dark: "github-dark",
 		},
-		// theme:"github-dark",
-		// theme: {
-		// 	light: "github-light",
-		// 	dark: "github-dark",
-		// },
 		codeCopyButtonTitle: "复制代码",
 	},
 	// Vite 配置

@@ -1,7 +1,3 @@
-<script setup>
-	import CustomBlock from '/.vitepress/components/CustomBlock.vue'	
-</script>
-
 # 事件处理
 
 ## 监听事件 ​
@@ -125,9 +121,10 @@ function warn(message, event) {
 <!-- 例如：事件处理器不来自子元素 -->
 <div @click.self="doThat">...</div>
 ```
-<CustomBlock Dcontent="TIP" Dclass="tip">
-<p>使用修饰符时需要注意调用顺序，因为相关代码是以相同的顺序生成的。因此使用 <code>@click.prevent.self</code> 会阻止<strong>元素及其子元素的所有点击事件的默认行为</strong>，而 <code>@click.self.prevent</code> 则只会阻止对元素本身的点击事件的默认行为。</p>
-</CustomBlock>
+
+::: tip TIP
+使用修饰符时需要注意调用顺序，因为相关代码是以相同的顺序生成的。因此使用 `@click.prevent.self` 会阻止 __元素及其子元素的所有点击事件的默认行为__，而 `@click.self.prevent` 则只会阻止对元素本身的点击事件的默认行为。
+::: 
 
 `.capture`、`.once` 和 `.passive` 修饰符与[原生 addEventListener 事件](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#options)相对应：
 
@@ -145,9 +142,9 @@ function warn(message, event) {
 ```
 `.passive` 修饰符一般用于触摸事件的监听器，可以用来[改善移动端设备的滚屏性能](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#%E4%BD%BF%E7%94%A8_passive_%E6%94%B9%E5%96%84%E6%BB%9A%E5%B1%8F%E6%80%A7%E8%83%BD)。
 
-<CustomBlock Dcontent="TIP" Dclass="tip">
-<p>请勿同时使用 <code>.passive</code> 和 <code>.prevent</code>，因为 <code>.passive</code> 已经向浏览器表明了你不想阻止事件的默认行为。如果你这么做了，则 <code>.prevent</code> 会被忽略，并且浏览器会抛出警告。</p>
-</CustomBlock>
+::: tip TIP
+请勿同时使用 `.passive` 和 `.prevent`，因为 `.passive` 已经向浏览器表明了你不想阻止事件的默认行为。如果你这么做了，则 `.prevent` 会被忽略，并且浏览器会抛出警告。
+:::
 
 ## 按键修饰符​
 在监听键盘事件时，我们经常需要检查特定的按键。Vue 允许在 `v-on` 或 `@` 监听按键事件时添加按键修饰符。
@@ -186,9 +183,9 @@ Vue 为一些常用的按键提供了别名：
 - `.shift`
 - `.meta`
 
-<CustomBlock Dcontent="注意" Dclass="tip">
-<p>在 Mac 键盘上，meta 是 Command 键 (⌘)。在 Windows 键盘上，meta 键是 Windows 键 (⊞)。在 Sun 微机系统键盘上，meta 是钻石键 (◆)。在某些键盘上，特别是 MIT 和 Lisp 机器的键盘及其后代版本的键盘，如 Knight 键盘，space-cadet 键盘，meta 都被标记为“META”。在 Symbolics 键盘上，meta 也被标识为“META”或“Meta”。</p>
-</CustomBlock>
+::: tip TIP
+在 Mac 键盘上，meta 是 Command 键 (⌘)。在 Windows 键盘上，meta 键是 Windows 键 (⊞)。在 Sun 微机系统键盘上，meta 是钻石键 (◆)。在某些键盘上，特别是 MIT 和 Lisp 机器的键盘及其后代版本的键盘，如 Knight 键盘，space-cadet 键盘，meta 都被标记为“META”。在 Symbolics 键盘上，meta 也被标识为“META”或“Meta”。
+:::
 
 举例来说：
 
@@ -199,10 +196,9 @@ Vue 为一些常用的按键提供了别名：
 <!-- Ctrl + 点击 -->
 <div @click.ctrl="doSomething">Do something</div>
 ```
-
-<CustomBlock Dcontent="TIP" Dclass="tip">
-<p>请注意，系统按键修饰符和常规按键不同。与 <code>keyup</code> 事件一起使用时，该按键必须在事件发出时处于按下状态。换句话说，<code>keyup.ctrl</code> 只会在你仍然按住 <code>ctrl</code> 但松开了另一个键时被触发。若你单独松开 <code>ctrl</code> 键将不会触发。</p>
-</CustomBlock>
+::: tip TIP
+请注意，系统按键修饰符和常规按键不同。与 `keyup` 事件一起使用时，该按键必须在事件发出时处于按下状态。换句话说，`keyup.ctrl` 只会在你仍然按住 `ctrl` 但松开了另一个键时被触发。若你单独松开 `ctrl` 键将不会触发。
+:::
 
 ## `.exact` 修饰符​
 `.exact` 修饰符允许精确控制触发事件所需的系统修饰符的组合。

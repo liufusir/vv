@@ -1,6 +1,5 @@
 <script setup>
     import Demo from '/.vitepress/components/Demo.vue'
-    import CustomBlock from '/.vitepress/components/CustomBlock.vue'
 </script>
 
 # 列表渲染
@@ -142,9 +141,9 @@ const myObject = reactive({
 
 ## `v-for` 与`v-if`
 
-<CustomBlock Dclass="warning" Dcontent="注意">
-<p>同时使用<code>v-if</code> 和<code>v-for</code> 是不推荐的，因为这样二者的优先级不明显。请转阅<a href="https://cn.vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for">风格指南</a>查看更多细节。</p>
-</CustomBlock>
+::: warning 注意
+同时使用`v-if` 和`v-for` 是不推荐的，因为这样二者的优先级不明显。请转阅[风格指南](https://cn.vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for)查看更多细节。
+::: 
 
 当它们同时存在于一个节点上时，`v-if`比 v-for 的优先级更高。这意味着`v-if`的条件将无法访问到`v-for` 作用域内定义的变量别名：
 
@@ -192,9 +191,9 @@ Vue 默认按照“就地更新”的策略来更新通过`v-for` 渲染的元�
 </template>
 ```
 
-<CustomBlock Dcontent="注意" Dclass="tip">
-<p><code>key</code> 在这里是一个通过<code>v-bind</code> 绑定的特殊 attribute。请不要和<a href="https://cn.vuejs.org/guide/essentials/list#v-for-with-an-object">在<code>v-for</code> 中使用对象</a>里所提到的对象属性名相混淆。</p>
-</CustomBlock>
+::: tip 注意
+`key` 在这里是一个通过`v-bind` 绑定的特殊 attribute。请不要和[在`v-for` 中使用对象](/guide/essentials/list#v-for-with-an-object)里所提到的对象属性名相混淆。
+:::
 
 [推荐](https://cn.vuejs.org/style-guide/rules-essential.html#use-keyed-v-for)在任何可行的时候为`v-for` 提供一个`key` attribute，除非所迭代的 DOM 内容非常简单 (例如：不包含组件或有状态的 DOM 元素)，或者你想有意采用默认行为来提高性能。
 
