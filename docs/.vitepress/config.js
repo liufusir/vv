@@ -83,7 +83,10 @@ export default defineConfig({
 						},{
 							text:"事件处理",
 							link:"event-handling"
-						}
+						},{
+                            text:'表单输入绑定',
+                            link:"forms"
+                        }
 					],
 				},
 			],
