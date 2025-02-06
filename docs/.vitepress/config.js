@@ -89,6 +89,15 @@ export default defineConfig({
                         },{
                             text:'生命周期',
                             link:'lifecycle'
+                        },{
+                            text:'侦听器',
+                            link:'watchers'
+                        },{
+                            text:'模板引用',
+                            link:'template-refs'
+                        },{
+                            text:'组件基础',
+                            link:'component-basics'
                         }
 					],
 				},
