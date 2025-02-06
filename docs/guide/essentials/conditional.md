@@ -100,4 +100,4 @@ v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的
 同时使用 `v-if` 和 `v-for` 是不推荐的，因为这样二者的优先级不明显。请查看[风格指南](https://cn.vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for)获得更多信息。
 :::
 
-当 `v-if` 和 `v-for` 同时存在于一个元素上的时候，`v-if` 会首先被执行。[请查看列表渲染指南](/guide/essentials/list.html#v-for-with-v-if)获取更多细节。
+当 `v-if` 和 `v-for` 同时存在于一个元素上的时候，`v-if` 会首先被执行。[请查看列表渲染指南](/guide/essentials/list#v-for-with-v-if)获取更多细节。
