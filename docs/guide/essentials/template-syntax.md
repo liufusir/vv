@@ -199,7 +199,7 @@ const objectOfAttrs = {
 动态参数值的限制​
 动态参数中表达式的值应当是一个字符串，或者是 `null`。特殊值 `null` 意为显式移除该绑定。其他非字符串的值会触发警告。
 
-动态参数语法的限制​
+### 动态参数语法的限制​ {#dynamic-argument-syntax-constraints}
 动态参数表达式因为某些字符的缘故有一些语法限制，比如空格和引号，在 HTML attribute 名称中都是不合法的。例如下面的示例：
 
 ``` template

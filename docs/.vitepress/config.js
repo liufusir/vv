@@ -126,6 +126,9 @@ export default defineConfig({
         },{
             text:'透传 Attributes',
             link:'attrs'
+        },{
+            text:'插槽 slots',
+            link:'slots'
         }
     ]},
       ],
