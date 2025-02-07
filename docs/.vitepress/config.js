@@ -3,7 +3,6 @@ import { defineConfig } from "vitepress";
 const basePath = "/guide/";
 export default defineConfig({
   // 打包时忽略所有死链接检查
-  ignoreDeadLinks: true,
 
   // 网站标题
   title: "Vue.js",
@@ -12,7 +11,7 @@ export default defineConfig({
   // 打包时将 meta 标签注入到 index.html 中
   metaChunk: true,
   // 自定义网站图标
-  head: [["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }]],
+  head: [["link", { rel: "icon", type: "image/svg+xml", href: "/assets/logo.svg" }]],
   // 主题配置
   themeConfig: {
     search: {
@@ -24,7 +23,7 @@ export default defineConfig({
     // 网站标题
     siteTitle: "Vue.js",
     // 网站图标
-    logo: "/logo.svg",
+    logo: "/assets/logo.svg",
     // 可以添加更多 outline 相关的配置项，以下是一些可能的扩展配置示例：
     outlineTitle: "本页",
     // 自定义出现在上一页和下一页链接上方的文本
@@ -127,7 +126,7 @@ export default defineConfig({
             text:'透传 Attributes',
             link:'attrs'
         },{
-            text:'插槽 slots',
+            text:'插槽',
             link:'slots'
         }
     ]},
