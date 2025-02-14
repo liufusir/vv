@@ -1,7 +1,6 @@
 <script setup>
     import{ref} from 'vue'
     import Demo from '/.vitepress/components/Demo.vue'
-    import CustomBlock from '/.vitepress/components/CustomBlock.vue'
 const awesome = ref(true)
 
 </script>
@@ -97,8 +96,8 @@ v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的
 
 ## `v-if` 和 `v-for​`
 
-<CustomBlock class="warning" Dcontent="警告">
-        <p>同时使用 <code>v-if</code> 和 <code>v-for</code> 是不推荐的，因为这样二者的优先级不明显。请查看<a href="https://cn.vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for">风格指南</a>获得更多信息。</p>
-</CustomBlock>
+::: warning 警告
+同时使用 `v-if` 和 `>v-for` 是不推荐的，因为这样二者的优先级不明显。请查看">[风格指南](https://cn.vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for) 获得更多信息。
+:::
 
 当 `v-if` 和 `v-for` 同时存在于一个元素上的时候，`v-if` 会首先被执行。[请查看列表渲染指南](/guide/essentials/list.html#v-for-with-v-if)获取更多细节。

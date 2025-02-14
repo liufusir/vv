@@ -1,7 +1,3 @@
-<script setup>
-    import CustomBlock from '/.vitepress/components/CustomBlock.vue'
-</script>
-
 # 快速上手
 
 ## 线上尝试 Vue
