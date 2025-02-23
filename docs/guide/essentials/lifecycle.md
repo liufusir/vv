@@ -29,9 +29,9 @@ setTimeout(() => {
 ```
 注意这并不意味着对 `onMounted` 的调用必须放在 `setup()` 或 `<script setup>` 内的词法上下文中。`onMounted()` 也可以在一个外部函数中调用，只要调用栈是同步的，且最终起源自 `setup()`就可以。
 
-生命周期图示​
+## 生命周期图示​
 下面是实例生命周期的图表。你现在并不需要完全理解图中的所有内容，但以后它将是一个有用的参考。
 
-![组件生命周期图示](/lifecycle_zh-CN.W0MNXI0C.png)
+![组件生命周期图示](/assets/lifecycle_zh-CN.W0MNXI0C.png)
 
 有关所有生命周期钩子及其各自用例的详细信息，请参考[生命周期钩子 API 索引](https://cn.vuejs.org/api/composition-api-lifecycle.html)。

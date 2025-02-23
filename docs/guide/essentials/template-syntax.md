@@ -4,7 +4,7 @@ Vue 使用一种基于 HTML 的模板语法，使我们能够声明式地将其�
 
 在底层机制中，Vue 会将模板编译成高度优化的 JavaScript 代码。结合响应式系统，当应用状态变更时，Vue 能够智能地推导出需要重新渲染的组件的最少数量，并应用最少的 DOM 操作。
 
-如果你对虚拟 DOM 的概念比较熟悉，并且偏好直接使用 JavaScript，你也可以结合可选的 JSX 支持[直接手写渲染函数](/guide/extras/render-function)而不采用模板。但请注意，这将不会享受到和模板同等级别的编译时优化。
+如果你对虚拟 DOM 的概念比较熟悉，并且偏好直接使用 JavaScript，你也可以结合可选的 JSX 支持[直接手写渲染函数](https://cn.vuejs.org/guide/extras/render-function)而不采用模板。但请注意，这将不会享受到和模板同等级别的编译时优化。
 
 ## 文本插值 ​
 
@@ -199,7 +199,7 @@ const objectOfAttrs = {
 动态参数值的限制​
 动态参数中表达式的值应当是一个字符串，或者是 `null`。特殊值 `null` 意为显式移除该绑定。其他非字符串的值会触发警告。
 
-动态参数语法的限制​
+### 动态参数语法的限制​ {#dynamic-argument-syntax-constraints}
 动态参数表达式因为某些字符的缘故有一些语法限制，比如空格和引号，在 HTML attribute 名称中都是不合法的。例如下面的示例：
 
 ``` template

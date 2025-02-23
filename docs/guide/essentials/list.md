@@ -139,7 +139,7 @@ const myObject = reactive({
 </ul>
 ```
 
-## `v-for` 与`v-if`
+## `v-for` 与`v-if` {#v-for-with-v-if}
 
 ::: warning 注意
 同时使用`v-if` 和`v-for` 是不推荐的，因为这样二者的优先级不明显。请转阅[风格指南](https://cn.vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for)查看更多细节。

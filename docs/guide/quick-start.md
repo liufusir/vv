@@ -105,7 +105,7 @@ yarn build
 bun run build
 ```
 
-此命令会在 `./dist` 文件夹中为你的应用创建一个生产环境的构建版本。关于将应用上线生产环境的更多内容，请阅读[生产环境部署指南](/guide/best-practices/production-deployment.html)。
+此命令会在 `./dist` 文件夹中为你的应用创建一个生产环境的构建版本。关于将应用上线生产环境的更多内容，请阅读[生产环境部署指南](https://cn.vuejs.org/guide/best-practices/production-deployment.html)。
 
 ## 通过 CDN 使用 Vue​
 
@@ -143,7 +143,7 @@ bun run build
 ```
 
 ::: tip TIP
-本指南中许多关于组合式 API 的例子将使用 `<script setup>` 语法，这需要构建工具。如果你打算在没有构建步骤的情况下使用组合式 API，请参考 [`setup()` 选项](/api/composition-api-setup.html)的用法。
+本指南中许多关于组合式 API 的例子将使用 `<script setup>` 语法，这需要构建工具。如果你打算在没有构建步骤的情况下使用组合式 API，请参考 [`setup()` 选项](https://cn.vuejs.org/api/composition-api-setup.html)的用法。
 :::
 
 ## 使用 ES 模块构建版本 ​
