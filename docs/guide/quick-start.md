@@ -1,6 +1,8 @@
 # 快速上手
 
-## 线上尝试 Vue
+## 线上尝试 Vue{#try-vue-online}
+
+
 
 -   想要快速体验 Vue，你可以直接试试我们的[演练场](https://play.vuejs.org/)。
 
@@ -8,7 +10,8 @@
 
 -   如果你已经比较熟悉 Node.js 和构建工具等概念，还可以直接在浏览器中打开 StackBlitz 来尝试完整的构建设置。
 
-## 创建一个 Vue 应用
+## 创建一个 Vue 应用{#creating-a-vue-application}
+
 
 在本节中，我们将介绍如何在本地搭建 Vue 单页应用。创建的项目将使用基于 Vite 的构建设置，并允许我们使用 Vue 的单文件组件 (SFC)。
 
@@ -107,7 +110,8 @@ bun run build
 
 此命令会在 `./dist` 文件夹中为你的应用创建一个生产环境的构建版本。关于将应用上线生产环境的更多内容，请阅读[生产环境部署指南](https://cn.vuejs.org/guide/best-practices/production-deployment.html)。
 
-## 通过 CDN 使用 Vue​
+## 通过 CDN 使用 Vue{#using-vue-from-cdn}
+
 
 你可以借助 script 标签直接通过 CDN 来使用 Vue：
 
@@ -119,7 +123,7 @@ bun run build
 
 通过 CDN 使用 Vue 时，不涉及“构建步骤”。这使得设置更加简单，并且可以用于增强静态的 HTML 或与后端框架集成。但是，你将无法使用单文件组件 (SFC) 语法。
 
-## 使用全局构建版本
+### 使用全局构建版本
 
 上面的链接使用了全局构建版本的 Vue，该版本的所有顶层 API 都以属性的形式暴露在了全局的 `Vue` 对象上。这里有一个使用全局构建版本的例子：
 
@@ -146,7 +150,7 @@ bun run build
 本指南中许多关于组合式 API 的例子将使用 `<script setup>` 语法，这需要构建工具。如果你打算在没有构建步骤的情况下使用组合式 API，请参考 [`setup()` 选项](https://cn.vuejs.org/api/composition-api-setup.html)的用法。
 :::
 
-## 使用 ES 模块构建版本 ​
+### 使用 ES 模块构建版本 ​
 
 在本文档的其余部分我们使用的主要是 ES 模块语法。现代浏览器大多都已原生支持 ES 模块。因此我们可以像这样通过 CDN 以及原生 ES 模块使用 Vue：
 
@@ -172,7 +176,7 @@ bun run build
 
 注意我们使用了 `&lt;script type="module">`，且导入的 CDN URL 指向的是 Vue 的 **ES 模块构建版本** 。
 
-## 启用 Import maps​
+### 启用 Import maps​
 
 在上面的示例中，我们使用了完整的 CDN URL 来导入，但在文档的其余部分中，你将看到如下代码：
 

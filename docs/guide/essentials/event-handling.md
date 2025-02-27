@@ -1,6 +1,6 @@
-# 事件处理
+# 事件处理{#event-handling}
 
-## 监听事件 ​
+## 监听事件 ​{#listening-to-events}
 
 我们可以使用 `v-on` 指令 (简写为 `@`) 来监听 DOM 事件，并在事件触发时执行对应的 JavaScript。用法：`v-on:click="handler"` 或 `@click="handler"`。
 
@@ -10,7 +10,8 @@
 
 -   **方法事件处理器**：一个指向组件上定义的方法的属性名或是路径。
 
-内联事件处理器 ​ 内联事件处理器通常用于简单场景，例如：
+## 内联事件处理器 ​{#inline-handlers}
+内联事件处理器通常用于简单场景，例如：
 
 ```js
 const count = ref(0);
@@ -21,7 +22,7 @@ const count = ref(0);
 <p>Count is: {{ count }}</p>
 ```
 
-## 方法事件处理器 ​
+## 方法事件处理器 ​{#method-handlers}
 
 随着事件处理器的逻辑变得愈发复杂，内联代码方式变得不够灵活。因此 `v-on` 也可以接受一个方法名或对某个方法的调用。
 
@@ -46,11 +47,11 @@ function greet(event) {
 
 方法事件处理器会自动接收原生 DOM 事件并触发执行。在上面的例子中，我们能够通过被触发事件的 `event.target` 访问到该 DOM 元素。
 
-### 方法与内联事件判断 ​
+### 方法与内联事件判断 ​{#methods-vs-inline-handlers}
 
 模板编译器会通过检查 `v-on` 的值是否是合法的 JavaScript 标识符或属性访问路径来断定是何种形式的事件处理器。举例来说，`foo`、`foo.bar` 和 `foo['bar']` 会被视为方法事件处理器，而 `foo()` 和 `count++` 会被视为内联事件处理器。
 
-## 在内联处理器中调用方法 ​
+## 在内联处理器中调用方法 ​{#calling-methods-in-inline-handlers}
 
 除了直接绑定方法名，你还可以在内联事件处理器中调用方法。这允许我们向方法传入自定义参数以代替原生事件：
 
@@ -65,7 +66,7 @@ function say(message) {
 <button @click="say('bye')">Say bye</button>
 ```
 
-## 在内联事件处理器中访问事件参数 ​
+## 在内联事件处理器中访问事件参数 ​{#accessing-event-argument-in-inline-handlers}
 
 有时我们需要在内联事件处理器中访问原生 DOM 事件。你可以向该处理器方法传入一个特殊的 `$event` 变量，或者使用内联箭头函数：
 
@@ -91,7 +92,7 @@ function warn(message, event) {
 }
 ```
 
-## 事件修饰符 ​
+## 事件修饰符 ​{#event-modifiers}
 
 在处理事件时调用 `event.preventDefault()` 或 `event.stopPropagation()` 是很常见的。尽管我们可以直接在方法内调用，但如果方法能更专注于数据逻辑而不用去处理 DOM 事件的细节会更好。
 
@@ -146,7 +147,7 @@ function warn(message, event) {
 请勿同时使用 `.passive` 和 `.prevent`，因为 `.passive` 已经向浏览器表明了你不想阻止事件的默认行为。如果你这么做了，则 `.prevent` 会被忽略，并且浏览器会抛出警告。
 :::
 
-## 按键修饰符​
+## 按键修饰符​ {#key-modifiers}
 在监听键盘事件时，我们经常需要检查特定的按键。Vue 允许在 `v-on` 或 `@` 监听按键事件时添加按键修饰符。
 
 ``` template
@@ -162,7 +163,7 @@ function warn(message, event) {
 ```
 在上面的例子中，仅会在 `$event.key` 为 `'PageDown'` 时调用事件处理。
 
-## 按键别名​
+### 按键别名​{#key-alias}
 Vue 为一些常用的按键提供了别名：
 
 - `.enter`
@@ -174,7 +175,7 @@ Vue 为一些常用的按键提供了别名：
 - `.down`
 - `.left`
 - `.right`
-## 系统按键修饰符​
+### 系统按键修饰符​{#system-modifiers}
 
 你可以使用以下系统按键修饰符来触发鼠标或键盘事件监听器，只有当按键被按下时才会触发。
 
@@ -200,7 +201,7 @@ Vue 为一些常用的按键提供了别名：
 请注意，系统按键修饰符和常规按键不同。与 `keyup` 事件一起使用时，该按键必须在事件发出时处于按下状态。换句话说，`keyup.ctrl` 只会在你仍然按住 `ctrl` 但松开了另一个键时被触发。若你单独松开 `ctrl` 键将不会触发。
 :::
 
-## `.exact` 修饰符​
+### `.exact` 修饰符​{#exact-modifier}
 `.exact` 修饰符允许精确控制触发事件所需的系统修饰符的组合。
 
 ```template
@@ -213,7 +214,7 @@ Vue 为一些常用的按键提供了别名：
 <!-- 仅当没有按下任何系统按键时触发 -->
 <button @click.exact="onClick">A</button>
 ```
-## 鼠标按键修饰符​
+## 鼠标按键修饰符{#mouse-button-modifiers}​
 - `.left`
 - `.right`
 - `.middle`

@@ -1,12 +1,9 @@
 ---
 outline: [2, 3]
 ---
-
 # 响应式基础
-
-## 声明响应式状态
-
-### `ref()`
+## 声明响应式状态 {#declaring-reactive-state-1}
+### `ref()` {#ref}
 
 在组合式 API 中，推荐使用组合式 `ref()` 函数来声明响应式状态
 
@@ -93,7 +90,7 @@ export default {
 
 这里是 Codepen 上的例子，没有使用任何构建工具。
 
-## &lt;script setup>​
+## `<script setup>​` {#script-setup}
 
 在 setup() 函数中手动暴露大量的状态和方法非常繁琐。幸运的是，我们可以通过使用单文件组件 (SFC) 来避免这种情况。我们可以使用 &lt;script setup> 来大幅度地简化代码：
 
@@ -117,7 +114,7 @@ function increment() {
 
 `<script setup>` 中的顶层的导入、声明的变量和函数可在同一组件的模板中直接使用。你可以理解为模板是在同一作用域内声明的一个 JavaScript 函数——它自然可以访问与它一起声明的所有内容。
 
-### 为什么要使用 ref？​
+### 为什么要使用 ref？​ {#why-refs}
 
 你可能会好奇：为什么我们需要使用带有 `.value` 的 ref，而不是普通的变量？为了解释这一点，我们需要简单地讨论一下 Vue 的响应式系统是如何工作的。
 
@@ -146,7 +143,7 @@ const myRef = {
 
 该响应性系统在[深入响应式原理](https://cn.vuejs.org/guide/extras/reactivity-in-depth.html)章节中有更详细的讨论。
 
-### 深层响应性 ​
+### 深层响应性 ​{#declaring-methods}
 
 ref 可以持有任何类型的值，包括深层嵌套的对象、数组或者 JavaScript 内置的数据结构，比如 `Map`。
 
@@ -176,7 +173,7 @@ function mutateDeeply() {
 -   [减少大型不可变数据的响应性开销](https://cn.vuejs.org/guide/best-practices/performance.html#reduce-reactivity-overhead-for-large-immutable-structures)
 -   [与外部状态系统集成](https://cn.vuejs.org/guide/extras/reactivity-in-depth.html#integration-with-external-state-systems)
 
-### DOM 更新时机 ​
+### DOM 更新时机 ​{#dom-update-timiing}
 
 当你修改了响应式状态时，DOM 会被自动更新。但是需要注意的是，DOM 更新不是同步的。Vue 会在“next tick”更新周期中缓冲所有状态的修改，以确保不管你进行了多少次状态修改，每个组件都只会被更新一次。
 
@@ -192,7 +189,7 @@ async function increment() {
 }
 ```
 
-## reactive()​
+## reactive()​{#reactive}
 
 还有另一种声明响应式状态的方式，即使用 reactive() API。与将内部值包装在特殊对象中的 ref 不同，reactive() 将使对象本身具有响应性：
 
@@ -214,7 +211,7 @@ const state = reactive({ count: 0 });
 
 `reactive()` 将深层地转换对象：当访问嵌套对象时，它们也会被 `reactive()` 包装。当 ref 的值是一个对象时，ref() 也会在内部调用它。与浅层 ref 类似，这里也有一个 [shallowReactive()](https://cn.vuejs.org/api/reactivity-advanced.html#shallowreactive) API 可以选择退出深层响应性。
 
-### Reactive Proxy vs. Original​
+### Reactive Proxy vs. Original​{#reactive-proxy-vs-original-1}
 
 值得注意的是，`reactive()` 返回的是一个原始对象的 Proxy，它和原始对象是不相等的：
 
@@ -249,7 +246,7 @@ proxy.nested = raw;
 console.log(proxy.nested === raw); // false
 ```
 
-### `reactive()` 的局限性 ​
+### `reactive()` 的局限性 ​{#limitations-of-reactive}
 
 `reactive()` API 有一些局限性：
 
@@ -282,9 +279,9 @@ callSomeFunction(state.count);
 
 由于这些限制，我们建议使用 `ref()` 作为声明响应式状态的主要 API。
 
-## 额外的 ref 解包细节 ​
+## 额外的 ref 解包细节 ​{#additional-ref-unwrapping-details}
 
-#### 作为 reactive 对象的属性
+### 作为 reactive 对象的属性{#ref-unwrapping-as-reactive-object-property}
 
 一个 ref 会在作为响应式对象的属性被访问或修改时自动解包。换句话说，它的行为就像一个普通的属性：
 
@@ -305,7 +302,7 @@ console.log(count.value); // 1
 
 只有当嵌套在一个深层响应式对象内时，才会发生 ref 解包。当其作为[浅层响应式对象](https://cn.vuejs.org/api/reactivity-advanced.html#shallowreactive)的属性被访问时不会解包。
 
-### 数组和集合的注意事项 ​
+### 数组和集合的注意事项 {#ref-unwrapping-in-arrays-and-collections}
 
 与 reactive 对象不同的是，当 ref 作为响应式数组或原生集合类型 (如 `Map`) 中的元素被访问时，它 **不会** 被解包：
 
@@ -319,7 +316,7 @@ const map = reactive(new Map([["count", ref(0)]]));
 console.log(map.get("count").value);
 ```
 
-### 在模板中解包的注意事项 ​
+### 在模板中解包的注意事项 ​{#caveat-when-unwrapping-in-templates}
 
 在模板渲染上下文中，只有顶级的 ref 属性才会被解包。
 

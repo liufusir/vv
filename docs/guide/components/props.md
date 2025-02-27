@@ -1,9 +1,8 @@
 ---
-outline: [1,2]
 ---
-# Props
+# Props{#props}
 
-## Props 声明​
+## Props 声明​{#props-declaration}
 一个组件需要显式声明它所接受的 props，这样 Vue 才能知道外部传入的哪些是 props，哪些是透传 attribute (关于透传 attribute，我们会在[专门的章节](https://cn.vuejs.org/guide/components/attrs.html)中讨论)。
 
 在使用 `<script setup>` 的单文件组件中，props 可以使用 `defineProps()` 宏来声明：
@@ -61,7 +60,7 @@ defineProps<{
 </script>
 ```
 
-## 响应式 Props 解构 ​
+## 响应式 Props 解构 ​{#destructuring-reactive-props}
 Vue 的响应系统基于属性访问跟踪状态的使用情况。例如，在计算属性或侦听器中访问 `props.foo` 时，`foo` 属性将被跟踪为依赖项。
 
 因此，在以下代码的情况下：
@@ -113,8 +112,8 @@ useComposable(() => foo)
 ```
 外部函数可以调用 getter (或使用 [toValue](https://cn.vuejs.org/api/reactivity-utilities.html#tovalue) 进行规范化) 来追踪提供的 prop 变更。例如，在计算属性或侦听器的 getter 中。
 
-## 传递 prop 的细节​
-### Prop 名字格式​
+## 传递 prop 的细节​{#passing-prop-details}
+### Prop 名字格式 {#prop-names}
 如果一个 prop 的名字很长，应使用 camelCase 形式，因为它们是合法的 JavaScript 标识符，可以直接在模板的表达式中使用，也可以避免在作为属性 key 名时必须加上引号。
 
 ```js
@@ -132,7 +131,7 @@ defineProps({
 ```
 对于组件名我们推荐使用 [PascalCase](https://cn.vuejs.org/guide/components/registration.html#component-name-casing)，因为这提高了模板的可读性，能帮助我们区分 Vue 组件和原生 HTML 元素。然而对于传递 props 来说，使用 camelCase 并没有太多优势，因此我们推荐更贴近 HTML 的书写风格。
 
-### 静态 vs. 动态 Props​
+### 静态 vs. 动态 Props​{#static-vs-dynamic-props}
 至此，你已经见过了很多像这样的静态值形式的 props：
 
 ```template
@@ -147,10 +146,10 @@ defineProps({
 <!-- 根据一个更复杂表达式的值动态传入 -->
 <BlogPost :title="post.title + ' by ' + post.author.name" />
 ```
-### 传递不同的值类型​
+### 传递不同的值类型​{#passing-different-value-types}
 在上述的两个例子中，我们只传入了字符串值，但实际上任何类型的值都可以作为 props 的值被传递。
 
-### Number​
+### Number​{#number}
 ``` template
 <!-- 虽然 `42` 是个常量，我们还是需要使用 v-bind -->
 <!-- 因为这是一个 JavaScript 表达式而不是一个字符串 -->
@@ -194,7 +193,7 @@ Object​
 <!-- 根据一个变量的值动态传入 -->
 <BlogPost :author="post.author" />
 ```
-### 使用一个对象绑定多个 prop​
+### 使用一个对象绑定多个 prop​{#binding-multiple-props}
 如果你想要将一个对象的所有属性都当作 props 传入，你可以使用[没有参数的 v-bind](https://cn.vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes)，即只使用 `v-bind` 而非 `:prop-name`。例如，这里有一个 `post` 对象：
 
 ```js
@@ -213,7 +212,7 @@ const post = {
 ``` template
 <BlogPost :id="post.id" :title="post.title" />
 ```
-## 单向数据流​
+## 单向数据流​{#one-way-data-flow}
 所有的 props 都遵循着 __单向绑定__ 原则，props 因父组件的更新而变化，自然地将新的状态向下流往子组件，而不会逆向传递。这避免了子组件意外修改父组件的状态的情况，不然应用的数据流将很容易变得混乱而难以理解。
 
 另外，每次父组件更新后，所有的子组件中的 props 都会被更新到最新值，这意味着你 __不应该__ 在子组件中去更改一个 prop。若你这么做了，Vue 会在控制台上向你抛出警告：
@@ -243,12 +242,12 @@ const props = defineProps(['size'])
 // 该 prop 变更时计算属性也会自动更新
 const normalizedSize = computed(() => props.size.trim().toLowerCase())
 ```
-### 更改对象 / 数组类型的 props​
+### 更改对象 / 数组类型的 props​{#changing-object-or-array-props}
 当对象或数组作为 props 被传入时，虽然子组件无法更改 props 绑定，但仍然 __可以__ 更改对象或数组内部的值。这是因为 JavaScript 的对象和数组是按引用传递，对 Vue 来说，阻止这种更改需要付出的代价异常昂贵。
 
 这种更改的主要缺陷是它允许了子组件以某种不明显的方式影响父组件的状态，可能会使数据流在将来变得更难以理解。在最佳实践中，你应该尽可能避免这样的更改，除非父子组件在设计上本来就需要紧密耦合。在大多数场景下，子组件应该[抛出一个事件](https://cn.vuejs.org/guide/components/events.html)来通知父组件做出改变。
 
-## Prop 校验​
+## Prop 校验​{#prop-validation}
 Vue 组件可以更细致地声明对传入的 props 的校验要求。比如我们上面已经看到过的类型声明，如果传入的值不满足类型要求，Vue 会在浏览器控制台中抛出警告来提醒使用者。这在开发给其他开发者使用的组件时非常有用。
 
 要声明对 props 的校验，你可以向 `defineProps()` 宏提供一个带有 props 校验选项的对象，例如：
@@ -323,7 +322,7 @@ defineProps({
 
 如果使用了[基于类型的 prop 声明](https://cn.vuejs.org/api/sfc-script-setup.html#type-only-props-emit-declarations) ，Vue 会尽最大努力在运行时按照 prop 的类型标注进行编译。举例来说，`defineProps<{ msg: string }>` 会被编译为 `{ msg: { type: String, required: true }}`。
 
-### 运行时类型检查​
+### 运行时类型检查​{#runtime-type-checking}
 校验选项中的 `type` 可以是下列这些原生构造函数：
 
 - `String`
@@ -354,7 +353,7 @@ defineProps({
 ```
 Vue 会通过 `instanceof Person` 来校验 `author` prop 的值是否是 `Person` 类的一个实例。
 
-### 可为 null 的类型​
+### 可为 null 的类型​{#nullable-types}
 如果该类型是必传但可为 null 的，你可以用一个包含 null 的数组语法：
 
 ```js
@@ -367,7 +366,7 @@ defineProps({
 ```
 注意如果 `type` 仅为 `null` 而非使用数组语法，它将允许任何类型。
 
-## Boolean 类型转换​
+## Boolean 类型转换​{#boolean-type-conversion}
 为了更贴近原生 boolean attributes 的行为，声明为 `Boolean` 类型的 props 有特别的类型转换规则。以带有如下声明的 `<MyComponent>` 组件为例：
 
 ```js

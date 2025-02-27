@@ -1,3 +1,4 @@
+import { onMounted } from 'vue'
 import DefaultTheme from "vitepress/theme";
 import "../custom.less";
 export default {
@@ -5,8 +6,15 @@ export default {
 	enhanceApp({ app, router, siteData }) {
 	},
 	setup() {
-		// 可以在这里进行一些初始化操作
-		console.log("主题设置");
-		
+        
+		onMounted(() => {
+            //遍历并清除所有<details>元素的class属性,因为details标签不应有class属性
+          const detailsElements = document.querySelectorAll('details')
+          detailsElements.forEach((element) => {
+            element.className = ''
+          })
+        })
 	},
-};
+
+
+}

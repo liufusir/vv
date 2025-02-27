@@ -1,10 +1,10 @@
-# 组件基础
+# 组件基础{#component-basics}
 
-组件允许我们将 UI 划分为独立的、可重用的部分，并且可以对每个部分进行单独的思考。在实际应用中，组件常常被组织成一个层层嵌套的树状结构： ![组件树](/assets/components.B1JZbf0_.png)
+组件允许我们将 UI 划分为独立的、可重用的部分，并且可以对每个部分进行单独的思考。在实际应用中，组件常常被组织成一个层层嵌套的树状结构： ![组件树](/components.B1JZbf0_.png)
 
 这和我们嵌套 HTML 元素的方式类似，Vue 实现了自己的组件模型，使我们可以在每个组件内封装自定义内容与逻辑。Vue 同样也能很好地配合原生 Web Component。如果你想知道 Vue 组件与原生 Web Components 之间的关系，可以[阅读此章节](https://cn.vuejs.org/guide/extras/web-components.html)。
 
-## 定义一个组件 ​
+## 定义一个组件 ​{#defining-a-component}
 
 当使用构建步骤时，我们一般会将 Vue 组件定义在一个单独的 `.vue` 文件中，这被叫做[单文件组件](https://cn.vuejs.org/guide/scaling-up/sfc.html) (简称 SFC)：
 
@@ -43,7 +43,7 @@ export default {
 
 上面的例子中定义了一个组件，并在一个 `.js` 文件里默认导出了它自己，但你也可以通过具名导出在一个文件中导出多个组件。
 
-## 使用组件 ​
+## 使用组件 ​{#using-a-component}
 
 ::: tip TIP
 我们会在接下来的指引中使用单文件组件语法，无论你是否使用构建步骤，组件相关的概念都是相同的。
@@ -90,7 +90,7 @@ import ButtonCounter from "./ButtonCounter.vue";
 
 请看 [DOM 内模板解析注意事项](/guide/essentials/component-basics#in-dom-template-parsing-caveats)了解更多细节。
 
-## 传递 props​
+## 传递 props​{#passing-props}
 
 如果我们正在构建一个博客，我们可能需要一个表示博客文章的组件。我们希望所有的博客文章分享相同的视觉布局，但有不同的内容。要实现这样的效果自然必须向组件中传递数据，例如每篇文章标题和内容，这就会使用到 props。
 
@@ -159,7 +159,7 @@ const posts = ref([
 
 以上就是目前你需要了解的关于 props 的全部了。如果你看完本章节后还想知道更多细节，我们推荐你深入阅读关于 props 的[完整指引](https://cn.vuejs.org/guide/components/props.html)。
 
-## 监听事件 ​
+## 监听事件 ​{#listening-to-events}
 
 让我们继续关注我们的 `<BlogPost>` 组件。我们会发现有时候它需要与父组件进行交互。例如，要在此处实现无障碍访问的需求，将博客文章的文字能够放大，而页面的其余部分仍使用默认字号。
 
@@ -290,7 +290,7 @@ Something bad happened.
 
 以上就是目前你需要了解的关于插槽的所有知识了。如果你看完本章节后还想知道更多细节，请深入阅读[组件插槽](https://cn.vuejs.org/guide/components/slots.html)章节。
 
-## 动态组件 ​
+## 动态组件 ​{#dynamic-components}
 
 有些场景会需要在两个组件间来回切换，比如 Tab 界面：
 
@@ -319,7 +319,7 @@ Something bad happened.
 - `<script type="text/x-template">`
 :::
 
-## 大小写区分 ​
+## 大小写区分 {#casing-conventions}
 
 HTML 标签和属性名称是不分大小写的，所以浏览器会把任何大写的字符解释为小写。这意味着当你使用 DOM 内的模板时，无论是 PascalCase 形式的组件名称、camelCase 形式的 prop 名称还是 v-on 的事件名称，都需要转换为相应等价的 kebab-case (短横线连字符) 形式：
 
@@ -339,7 +339,7 @@ const BlogPost = {
 <blog-post post-title="hello!" @update-post="onUpdatePost"></blog-post>
 ```
 
-## 闭合标签 ​
+## 闭合标签 ​{#closing-tags}
 
 我们在上面的例子中已经使用过了闭合标签 (self-closing tag)：
 

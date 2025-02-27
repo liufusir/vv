@@ -12,9 +12,9 @@ const awesome = ref(true)
 }
 </style>
 
-# 条件渲染
+# 条件渲染{#conditional-rendering}
 
-## `v-if`
+## `v-if`{#v-if}
 
 v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的表达式返回真值时才被渲染。
 
@@ -22,7 +22,8 @@ v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的
 <h1 v-if="awesome">Vue is awesome!</h1>
 ```
 
-##　`v-else​`
+
+## `v-else​` {#v-else}
 
 你也可以使用 v-else 为 v-if 添加一个“else 区块”。
 
@@ -39,7 +40,7 @@ v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的
 <h1 v-else>Oh no 😢</h1>
 </Demo>
 
-## `v-else-if​`
+## `v-else-if​`{#v-else-if}
 
 顾名思义，`v-else-if` 提供的是相应于 `v-if` 的“else if 区块”。它可以连续多次重复使用：
 
@@ -60,7 +61,8 @@ v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的
 
 和 `v-else` 类似，一个使用 `v-else`-if 的元素必须紧跟在一个 `v-if` 或一个 `v-else-if` 元素后面。
 
-`<template>` 上的 `v-if`​ 因为 `v-if` 是一个指令，他必须依附于某个元素。但如果我们想要切换不止一个元素呢？在这种情况下我们可以在一个 `<template>` 元素上使用 `v-if`，这只是一个不可见的包装器元素，最后渲染的结果并不会包含这个 `<template>` 元素。
+## `<template>` 上的 `v-if`​ {#v-if-on-template}
+因为 `v-if` 是一个指令，他必须依附于某个元素。但如果我们想要切换不止一个元素呢？在这种情况下我们可以在一个 `<template>` 元素上使用 `v-if`，这只是一个不可见的包装器元素，最后渲染的结果并不会包含这个 `<template>` 元素。
 
 ``` template
 <template v-if="ok">
@@ -72,7 +74,7 @@ v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的
 
 `v-else` 和 `v-else-if` 也可以在 `<template>` 上使用。
 
-## `v-show​`
+## `v-show​` #{v-show}
 
 另一个可以用来按条件显示一个元素的指令是 `v-show`。其用法基本一样：
 
@@ -84,7 +86,7 @@ v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的
 
 `v-show` 不支持在 `<template>` 元素上使用，也不能和 `v-else` 搭配使用。
 
-## `v-if` vs. `v-show​`
+## `v-if` vs. `v-show​` {#v-if-vs-v-show}
 
 `v-if` 是“真实的”按条件渲染，因为它确保了在切换时，条件区块内的事件监听器和子组件都会被销毁与重建。
 
@@ -94,7 +96,7 @@ v-if 指令用于条件性地渲染一块内容。这块内容只会在指令的
 
 总的来说，`v-if `有更高的切换开销，而 `v-show` 有更高的初始渲染开销。因此，如果需要频繁切换，则使用 `v-show` 较好；如果在运行时绑定条件很少改变，则 v-if 会更合适。
 
-## `v-if` 和 `v-for​`
+## `v-if` 和 `v-for​` {#v-if-with-v-for}
 
 ::: warning 警告
 同时使用 `v-if` 和 `v-for` 是不推荐的，因为这样二者的优先级不明显。请查看[风格指南](https://cn.vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for)获得更多信息。
