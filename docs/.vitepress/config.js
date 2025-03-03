@@ -11,7 +11,9 @@ export default defineConfig({
   // 打包时将 meta 标签注入到 index.html 中
   metaChunk: true,
   // 自定义网站图标
-  head: [["link", { rel: "icon", type: "image/svg+xml", href: "/public/logo.svg" }]],
+  head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/public/logo.svg" }],
+  ],
   // 主题配置
   themeConfig: {
     search: {
@@ -109,33 +111,51 @@ export default defineConfig({
         {
           text: "深入组件",
           base: "/guide/components/",
-          items: [{ 
-            text: "注册", 
-            link: "registration" 
-        },{
-           text:'Props',
-           link:"props" 
+          items: [
+            {
+              text: "注册",
+              link: "registration",
+            },
+            {
+              text: "Props",
+              link: "props",
+            },
+            {
+              text: "事件",
+              link: "events",
+            },
+            {
+              text: "组件 v-model",
+              link: "v-model",
+            },
+            {
+              text: "透传 Attributes",
+              link: "attrs",
+            },
+            {
+              text: "插槽",
+              link: "slots",
+            },
+            {
+              text: "依赖注入",
+              link: "provide-inject",
+            },
+            {
+              text: "异步指令",
+              link: "async",
+            },
+          ],
         },
         {
-          text:'事件',
-          link:"events"
-        },{
-            text:'组件 v-model',
-            link:"v-model"
-        },{
-            text:'透传 Attributes',
-            link:'attrs'
-        },{
-            text:'插槽',
-            link:'slots'
-        },{
-            text:"依赖注入",
-            link:"provide-inject"
-        },{
-            text:"异步指令",
-            link:"async"
-        }
-    ]},
+          text: "逻辑复用",
+          base: "/guide/reusability/",
+          items: [
+            {
+              text:"组合式函数",
+              link:"composables"
+            },
+          ],
+        },
       ],
     },
 
@@ -206,8 +226,8 @@ export default defineConfig({
       // 开发服务器监听地址
       host: "0.0.0.0",
       hmr: {
-        overlay: false
-      }
+        overlay: false,
+      },
     },
   },
 });

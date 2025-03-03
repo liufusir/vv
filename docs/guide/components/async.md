@@ -160,5 +160,6 @@ const AsyncComp = defineAsyncComponent({
   hydrate: myStrategy
 })
 ```
-## 搭配 Suspense 使用{#using-with-suspense}​
+## 搭配 Suspense 使用 {#using-with-suspense}
+
 异步组件可以搭配内置的 `<Suspense>` 组件一起使用，若想了解 `<Suspense>` 和异步组件之间交互，请参阅 [`<Suspense>`](https://cn.vuejs.org/guide/built-ins/suspense.html) 章节。
