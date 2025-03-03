@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-
-=======
->>>>>>> develop
 # 组件基础
 
 组件允许我们将 UI 划分为独立的、可重用的部分，并且可以对每个部分进行单独的思考。在实际应用中，组件常常被组织成一个层层嵌套的树状结构： ![组件树](/assets/components.B1JZbf0_.png)
@@ -270,11 +265,7 @@ export default {
 
 我们期望能渲染成这样：
 
-<<<<<<< HEAD
-::: danger This is an Error for Demo Purposes
-=======
 :::danger This is an Error for Demo Purposes
->>>>>>> develop
 Something bad happened.
 :::
 这可以通过 Vue 的自定义 `<slot>` 元素来实现：
@@ -319,19 +310,12 @@ Something bad happened.
 ## DOM 内模板解析注意事项  {#in-dom-template-parsing-caveats}
 
 如果你想在 DOM 中直接书写 Vue 模板，Vue 则必须从 DOM 中获取模板字符串。由于浏览器的原生 HTML 解析行为限制，有一些需要注意的事项。
-<<<<<<< HEAD
-::: tip TIP
-请注意下面讨论只适用于直接在 DOM 中编写模板的情况。如果你使用来自以下来源的字符串模板，就不需要顾虑这些限制了：
-- 单文件组件
-内联模板字符串 (例如 `template: '...'`>)
-=======
 
 ::: tip TIP
 请注意下面讨论只适用于直接在 DOM 中编写模板的情况。如果你使用来自以下来源的字符串模板，就不需要顾虑这些限制了：
 
 - 单文件组件
 - 内联模板字符串 (例如 `template: '...'`)
->>>>>>> develop
 - `<script type="text/x-template">`
 :::
 
@@ -389,13 +373,9 @@ const BlogPost = {
 ```
 
 ::: tip TIP
-<<<<<<< HEAD
-当使用在原生 HTML 元素上时，`is` 的值必须加上前缀 `vue:` 才可以被解析为一个 Vue 组件。这一点是必要的，为了避免和原生的[自定义内置元素](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example)相混淆。
-=======
 
 当使用在原生 HTML 元素上时，`is` 的值必须加上前缀 `vue:` 才可以被解析为一个 Vue 组件。这一点是必要的，为了避免和原生的[自定义内置元素](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example)相混淆。
 
->>>>>>> develop
 :::
 
 以上就是你需要了解的关于 DOM 内模板解析的所有注意事项，同时也是 Vue 基础部分的所有内容。
