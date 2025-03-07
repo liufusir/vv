@@ -11,7 +11,9 @@ export default defineConfig({
   // 打包时将 meta 标签注入到 index.html 中
   metaChunk: true,
   // 自定义网站图标
-  head: [["link", { rel: "icon", type: "image/svg+xml", href: "/assets/logo.svg" }]],
+  head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
+  ],
   // 主题配置
   themeConfig: {
     search: {
@@ -23,7 +25,7 @@ export default defineConfig({
     // 网站标题
     siteTitle: "Vue.js",
     // 网站图标
-    logo: "/assets/logo.svg",
+    logo: "/public/logo.svg",
     // 可以添加更多 outline 相关的配置项，以下是一些可能的扩展配置示例：
     outlineTitle: "本页",
     // 自定义出现在上一页和下一页链接上方的文本
@@ -109,27 +111,51 @@ export default defineConfig({
         {
           text: "深入组件",
           base: "/guide/components/",
-          items: [{ 
-            text: "注册", 
-            link: "registration" 
-        },{
-           text:'Props',
-           link:"props" 
+          items: [
+            {
+              text: "注册",
+              link: "registration",
+            },
+            {
+              text: "Props",
+              link: "props",
+            },
+            {
+              text: "事件",
+              link: "events",
+            },
+            {
+              text: "组件 v-model",
+              link: "v-model",
+            },
+            {
+              text: "透传 Attributes",
+              link: "attrs",
+            },
+            {
+              text: "插槽",
+              link: "slots",
+            },
+            {
+              text: "依赖注入",
+              link: "provide-inject",
+            },
+            {
+              text: "异步指令",
+              link: "async",
+            },
+          ],
         },
         {
-          text:'事件',
-          link:"events"
-        },{
-            text:'组件 v-model',
-            link:"v-model"
-        },{
-            text:'透传 Attributes',
-            link:'attrs'
-        },{
-            text:'插槽',
-            link:'slots'
-        }
-    ]},
+          text: "逻辑复用",
+          base: "/guide/reusability/",
+          items: [
+            {
+              text:"组合式函数",
+              link:"composables"
+            },
+          ],
+        },
       ],
     },
 
@@ -179,8 +205,9 @@ export default defineConfig({
   },
   markdown: {
     gfmAlerts: true,
+    ignoreParsingErrors: true,
     languageAlias: {
-      template: "html",
+      template: "vue",
     },
 
     theme: {
@@ -200,8 +227,8 @@ export default defineConfig({
       // 开发服务器监听地址
       host: "0.0.0.0",
       hmr: {
-        overlay: false
-      }
+        overlay: false,
+      },
     },
   },
 });

@@ -1,6 +1,6 @@
-# 透传 Attributes​
+# 透传 Attributes​{#attributes}
 
-## Attributes 继承​
+## Attributes 继承​{#attribute-inheritance}
 “透传 attribute”指的是传递给一个组件，却没有被该组件声明为 [props](https://cn.vuejs.org/guide/components/props.html) 或 [emits](https://cn.vuejs.org/guide/components/events.html#defining-custom-events) 的 attribute 或者 `v-on` 事件监听器。最常见的例子就是 `class`、`style` 和 `id`。
 
 当一个组件以单个元素为根作渲染时，透传的 attribute 会自动被添加到根元素上。举例来说，假如我们有一个 `<MyButton>` 组件，它的模板长这样：
@@ -21,7 +21,7 @@
 ```
 这里，`<MyButton>` 并没有将 `class` 声明为一个它所接受的 prop，所以 `class` 被视作透传 attribute，自动透传到了 `<MyButton>` 的根元素上。
 
-### 对 `class` 和 `style` 的合并​
+### 对 `class` 和 `style` 的合并​{#merge-strategy-for-class-and-style}
 如果一个子组件的根元素已经有了 `class` 或 `style` attribute，它会和从父组件上继承的值合并。如果我们将之前的 `<MyButton>` 组件的模板改成这样：
 
 ```template
@@ -33,7 +33,7 @@
 ```html
 <button class="btn large">Click Me</button>
 ```
-### `v-on` 监听器继承​
+### `v-on` 监听器继承​{#v-on-event-listener-inheritance}
 同样的规则也适用于 `v-on` 事件监听器：
 
 ```template
@@ -41,7 +41,7 @@
 ```
 click 监听器会被添加到 `<MyButton>` 的根元素，即那个原生的 `<button>` 元素之上。当原生的 `<button>` 被点击，会触发父组件的 `onClick` 方法。同样的，如果原生 `button` 元素自身也通过 `v-on` 绑定了一个事件监听器，则这个监听器和从父组件继承的监听器都会被触发。
 
-### 深层组件继承​
+### 深层组件继承​{#deeply-nested-component-inheritance}
 有些情况下一个组件会在根节点上渲染另一个组件。例如，我们重构一下 `<MyButton>`，让它在根节点上渲染 `<BaseButton>`：
 
 ```template
@@ -100,7 +100,7 @@ defineOptions({
 ```
 小提示：[没有参数的 v-bind](https://cn.vuejs.org/guide/essentials/template-syntax.html#dynamically-binding-multiple-attributes) 会将一个对象的所有属性都作为 attribute 应用到目标元素上。
 
-## 多根节点的 Attributes 继承​
+## 多根节点的 Attributes 继承​{#attributes-inheritance-on-multiple-root-nodes}
 和单根节点组件有所不同，有着多个根节点的组件没有自动 attribute 透传行为。如果 `$attrs` 没有被显式绑定，将会抛出一个运行时警告。
 
 ```template
@@ -120,7 +120,7 @@ defineOptions({
 <main v-bind="$attrs">...</main>
 <footer>...</footer>
 ```
-## 在 JavaScript 中访问透传 Attributes​
+## 在 JavaScript 中访问透传 Attributes​{#accessing-fallthrough-attributes-in-javascript}
 如果需要，你可以在 `<script setup>` 中使用 `useAttrs()` API 来访问一个组件的所有透传 attribute：
 
 ```vue

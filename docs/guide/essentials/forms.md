@@ -5,14 +5,13 @@ outline: [2, 3]
 <script setup>
     import {ref} from 'vue'
     import Demo from '/.vitepress/components/Demo.vue'
-    const message = '';
+    const message = ref('');
     const checked = ref(false);
     const checkedNames = ref([]);
     const picked = ref('');
     const selected = ref('');
 </script>
-
-# 表单输入绑定 ​
+# 表单输入绑定{#form-input-bindings}
 
 在前端处理表单时，我们常常需要将表单输入框的内容同步给 JavaScript 中相应的变量。手动连接值绑定和更改事件监听器可能会很麻烦：
 
@@ -36,9 +35,9 @@ outline: [2, 3]
 `v-model` 会忽略任何表单元素上初始的 `value` 、`checked` 或 `selected` attribute。它将始终将当前绑定的 JavaScript 状态视为数据的正确来源。你应该在 JavaScript 中使用[响应式系统的 API](https://cn.vuejs.org/api/reactivity-core.html#reactivity-api-core)来声明该初始值。
 :::
 
-## 基本用法
+## 基本用法{#basic-usage}
 
-### 文本 ​
+### 文本 ​{#text}
 
 ```template
 <p>Message is: {{ message }}</p>
@@ -54,7 +53,7 @@ outline: [2, 3]
 对于需要使用 [IME](https://en.wikipedia.org/wiki/Input_method)) 的语言 (中文，日文和韩文等)，你会发现 `v-model` 不会在 IME 输入还在拼字阶段时触发更新。如果你的确想在拼字阶段也触发更新，请直接使用自己的 `input` 事件监听器和 `value` 绑定而不要使用 `v-model`。
 :::
 
-### 多行文本 ​
+### 多行文本 ​{#multiline-text}
 
 ```template
 <span>Multiline message is:</span>
@@ -77,7 +76,7 @@ outline: [2, 3]
 <textarea v-model="text"></textarea>
 ```
 
-### 复选框 ​
+### 复选框 ​{#checkbox}
 
 单一的复选框，绑定布尔类型值：
 
@@ -125,7 +124,7 @@ const checkedNames = ref([]);
 
 在这个例子中，checkedNames 数组将始终包含所有当前被选中的框的值。
 
-### 单选按钮 ​
+### 单选按钮 ​{#radio}
 
 ```template
 <div>Picked: {{ picked }}</div>
@@ -147,7 +146,7 @@ const checkedNames = ref([]);
 <label for="two">Two</label>
 </Demo>
 
-### 选择器 ​
+### 选择器 ​{#select}
 
 单个选择器的示例如下：
 
@@ -221,7 +220,7 @@ const options = ref([
 <div>Selected: {{ selected }}</div>
 ```
 
-## 值绑定 ​
+## 值绑定 ​{#value-bindings}
 
 对于单选按钮，复选框和选择器选项，v-model 绑定的值通常是静态的字符串 (或者对复选框是布尔值)：
 
@@ -238,9 +237,9 @@ const options = ref([
 </select>
 ```
 
-但有时我们可能希望将该值绑定到当前组件实例上的动态数据。这可以通过使用 <code>v-bind</code> 来实现。此外，使用 <code>v-bind</code> 还使我们可以将选项值绑定为非字符串的数据类型。
+但有时我们可能希望将该值绑定到当前组件实例上的动态数据。这可以通过使用 `v-bind` 来实现。此外，使用 `v-bind` 还使我们可以将选项值绑定为非字符串的数据类型。
 
-### 复选框
+### 复选框​{#checkbox-1}
 
 ```template
 <input
@@ -264,7 +263,7 @@ const options = ref([
 `true-value` 和 `false-value` attributes 不会影响 `value` attribute，因为浏览器在表单提交时，并不会包含未选择的复选框。为了保证这两个值 (例如：“yes”和“no”) 的其中之一被表单提交，请使用单选按钮作为替代。
 :::
 
-### 单选按钮 ​
+### 单选按钮 ​{#radio-1}
 
 ```template
 <input type="radio" v-model="pick" :value="first" />
@@ -273,7 +272,7 @@ const options = ref([
 
 pick 会在第一个按钮选中时被设为 first，在第二个按钮选中时被设为 second。
 
-### 选择器选项
+### 选择器选项{#select-1}
 
 ```template
 <select v-model="selected">
@@ -284,9 +283,9 @@ pick 会在第一个按钮选中时被设为 first，在第二个按钮选中时
 
 `v-model` 同样也支持非字符串类型的值绑定！在上面这个例子中，当某个选项被选中，`selected` 会被设为该对象字面量值 `{ number: 123 }`。
 
-## 修饰符 ​
+## 修饰符 ​{#modifiers}
 
-### `.lazy​`
+### `.lazy​`{#lazy}
 
 默认情况下，`v-model` 会在每次 `input` 事件后更新数据 (<a href="/forms.html#vmodel-ime-tip">例外</a>)。你可以添加 `lazy` 修饰符来改为在每次 `change` 事件后更新数据：
 
@@ -295,7 +294,7 @@ pick 会在第一个按钮选中时被设为 first，在第二个按钮选中时
 <input v-model.lazy="msg" />
 ```
 
-### `.number`
+### `.number`{#number}
 
 如果你想让用户输入自动转换为数字，你可以在 v`-model` 后添加 `.number` 修饰符来管理输入：
 
@@ -307,7 +306,7 @@ pick 会在第一个按钮选中时被设为 first，在第二个按钮选中时
 
 `number` 修饰符会在输入框有 `type="number"` 时自动启用。
 
-### `.trim`
+### `.trim`{#trim}
 
 如果你想要默认自动去除用户输入内容中两端的空格，你可以在 `v-model` 后添加 `.trim` 修饰符：
 
@@ -315,6 +314,6 @@ pick 会在第一个按钮选中时被设为 first，在第二个按钮选中时
 <input v-model.trim="msg" />
 ```
 
-## **组件上的** `v-model`
+## **组件上的** `v-model`{#v-model-with-components}
 
 HTML 的内置表单输入类型并不总能满足所有需求。幸运的是，我们可以使用 Vue 构建具有自定义行为的可复用输入组件，并且这些输入组件也支持 `v-model`！要了解更多关于此的内容，请在组件指引中阅读<a href="https://cn.vuejs.org/guide/components/v-model.html">配合 v-model 使用</a>。

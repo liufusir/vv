@@ -1,7 +1,5 @@
-
-# 创建一个 Vue 应用
-
-## 应用实例​
+# 创建一个 Vue 应用{#creating-a-vue-application}
+## 应用实例​{#the-application-instance}
 每个 Vue 应用都是通过 createApp 函数创建一个新的 应用实例：
 ```js
 import { createApp } from 'vue'
@@ -34,7 +32,8 @@ App (root component)
 ```
 我们会在指南的后续章节中讨论如何定义和组合多个组件。在那之前，我们得先关注一个组件内到底发生了什么。
 
-## 挂载应用​
+## 挂载应用​{#the-root-component}
+
 应用实例必须在调用了 .mount() 方法后才会渲染出来。该方法接收一个“容器”参数，可以是一个实际的 DOM 元素或是一个 CSS 选择器字符串：
 ``` html
 <div id="app"></div>
@@ -46,7 +45,8 @@ app.mount('#app')
 
 `.mount()` 方法应该始终在整个应用配置和资源注册完成后被调用。同时请注意，不同于其他资源注册方法，它的返回值是根组件实例而非应用实例。
 
-## DOM 中的根组件模板​
+## DOM 中的根组件模板​{#mounting-the-app}
+
 根组件的模板通常是组件本身的一部分，但也可以直接通过在挂载容器内编写模板来单独提供：
 ``` html
 <div id="app">
@@ -70,7 +70,7 @@ app.mount('#app')
 
 DOM 内模板通常用于无构建步骤的 Vue 应用程序。它们也可以与服务器端框架一起使用，其中根模板可能是由服务器动态生成的。
 
-## 应用配置​
+## 应用配置​{#app-configurations}
 应用实例会暴露一个 .config 对象允许我们配置一些应用级的选项，例如定义一个应用级的错误处理器，用来捕获所有子组件上的错误：
 ```js
 app.config.errorHandler = (err) => {
@@ -85,7 +85,8 @@ app.component('TodoDeleteButton', TodoDeleteButton)
 
 确保在挂载应用实例之前完成所有应用配置！
 
-## 多个应用实例​
+
+## 多个应用实例​{#multiple-application-instances}
 应用实例并不只限于一个。createApp API 允许你在同一个页面中创建多个共存的 Vue 应用，而且每个应用都拥有自己的用于配置和全局资源的作用域。
 ```js
 const app1 = createApp({

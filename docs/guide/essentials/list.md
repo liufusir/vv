@@ -1,10 +1,9 @@
 <script setup>
     import Demo from '/.vitepress/components/Demo.vue'
 </script>
+# 列表渲染{#list-rendering}
 
-# 列表渲染
-
-## `v-for​`
+## `v-for​` {#v-for}
 
 我们可以使用`v-for` 指令基于一个数组来渲染一个列表。`v-for` 指令的值需要使用`item in items` 形式的特殊语法，其中`items` 是源数据的数组，而`item` 是迭代项的别名:
 
@@ -80,7 +79,7 @@ items.forEach((item,index) => {
 <div v-for="item of items"></div>
 ```
 
-##`v-for` 与对象
+## `v-for` 与对象{#v-for-with-an-object}
 
 你也可以使用`v-for` 来遍历一个对象的所有属性。遍历的顺序会基于对该对象调用`Object.values()` 的返回值来决定。
 
@@ -116,7 +115,7 @@ const myObject = reactive({
 </li>
 ```
 
-## 在`v-for` 里使用范围值
+## 在`v-for` 里使用范围值{#v-for-with-a-range}
 
 `v-for` 可以直接接受一个整数值。在这种用例中，会将该模板期于`1...n` 的取值范围重复多次。
 
@@ -126,7 +125,7 @@ const myObject = reactive({
 
 注意此处`n` 的值是从`1` 开始而非`0`.
 
-## `<template>` 上的`v-for`
+## `<template>` 上的`v-for` {#v-for-on-template}
 
 与模板上的`v-if`类似，你也可以在 &lt;template> 标签上使用 v-for 来渲染一个包含多个元素的块。例如：
 
@@ -167,7 +166,7 @@ const myObject = reactive({
 </template>
 ```
 
-## 通过`key` 管理状态 ​
+## 通过`key` 管理状态 ​{#maintaining-state-with-key}
 
 Vue 默认按照“就地更新”的策略来更新通过`v-for` 渲染的元素列表。当数据项的顺序改变时，Vue 不会随之移动 DOM 元素的顺序，而是就地更新每个元素，确保它们在原本指定的索引位置上渲染。
 
@@ -199,7 +198,7 @@ Vue 默认按照“就地更新”的策略来更新通过`v-for` 渲染的元�
 
 `key` 绑定的值期望是一个基础类型的值，例如字符串或 number 类型。不要用对象作为 v-for 的 key。关于`key` attribute 的更多用途细节，请参阅`key` [API 文档](https://cn.vuejs.org/api/built-in-special-attributes.html#key)。
 
-## 组件上使用`v-for​`
+## 组件上使用`v-for​`{#v-for-with-a-component}
 
 我们可以直接在组件上使用`v-for`，和在一般的元素上使用没有区别 (别忘记提供一个`key`)：
 
@@ -220,9 +219,9 @@ Vue 默认按照“就地更新”的策略来更新通过`v-for` 渲染的元�
 
 不自动将`item` 注入组件的原因是，这会使组件与`v-for` 的工作方式紧密耦合。明确其数据的来源可以使组件在其他情况下重用。
 
-## 数组变化侦测
+## 数组变化侦测{#array-change-detection}
 
-### 变更方法 ​
+### 变更方法 ​{#change-methods}
 
 Vue 能够侦听响应式数组的变更方法，并在它们被调用时触发相关的更新。这些变更方法包括：
 
@@ -234,7 +233,7 @@ Vue 能够侦听响应式数组的变更方法，并在它们被调用时触发�
 -   sort()
 -   reverse()
 
-## 替换一个数组 ​
+## 替换一个数组 ​{#replacing-an-array}
 
 变更方法，顾名思义，就是会对调用它们的原数组进行变更。相对地，也有一些不可变 (immutable) 方法，例如`filter()`，`concat()` 和`slice()`，这些都不会更改原数组，而总是返回一个新数组。当遇到的是非变更方法时，我们需要将旧的数组替换为新的：
 
@@ -245,7 +244,7 @@ items.value = items.value.filter((item) => item.message.match(/Foo/));
 
 你可能认为这将导致 Vue 丢弃现有的 DOM 并重新渲染整个列表——幸运的是，情况并非如此。Vue 实现了一些巧妙的方法来最大化对 DOM 元素的重用，因此用另一个包含部分重叠对象的数组来做替换，仍会是一种非常高效的操作。
 
-## 展示过滤或排序后的结果 ​
+## 展示过滤或排序后的结果 ​{#displaying-filtered-sorted-results}
 
 有时，我们希望显示数组经过过滤或排序后的内容，而不实际变更或重置原始数据。在这种情况下，你可以创建返回已过滤或已排序数组的计算属性。
 

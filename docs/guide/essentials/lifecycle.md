@@ -1,8 +1,7 @@
-# 生命周期钩子
-
+# 生命周期钩子{#lifecycle-hooks}
 每个 Vue 组件实例在创建时都需要经历一系列的初始化步骤，比如设置好数据侦听，编译模板，挂载实例到 DOM，以及在数据改变时更新 DOM。在此过程中，它也会运行被称为生命周期钩子的函数，让开发者有机会在特定阶段运行自己的代码。
 
-## 注册周期钩子​
+## 注册周期钩子​ {#registering-lifecycle-hooks}
 举例来说，`onMounted` 钩子可以用来在组件完成初始渲染并创建 DOM 节点后运行代码：
 
 ```vue
@@ -29,9 +28,9 @@ setTimeout(() => {
 ```
 注意这并不意味着对 `onMounted` 的调用必须放在 `setup()` 或 `<script setup>` 内的词法上下文中。`onMounted()` 也可以在一个外部函数中调用，只要调用栈是同步的，且最终起源自 `setup()`就可以。
 
-## 生命周期图示​
+## 生命周期图示​ {#lifecycle-diagram}
 下面是实例生命周期的图表。你现在并不需要完全理解图中的所有内容，但以后它将是一个有用的参考。
 
-![组件生命周期图示](/assets/lifecycle_zh-CN.W0MNXI0C.png)
+![组件生命周期图示](/lifecycle_zh-CN.W0MNXI0C.png)
 
 有关所有生命周期钩子及其各自用例的详细信息，请参考[生命周期钩子 API 索引](https://cn.vuejs.org/api/composition-api-lifecycle.html)。

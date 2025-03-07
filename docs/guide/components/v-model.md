@@ -1,5 +1,5 @@
-# 组件 v-model​
-## 基本用法​
+# 组件 v-model​{#component-v-model}
+## 基本用法​{#basic-usage}
 `v-model` 可以在组件上使用以实现双向绑定。
 
 从 Vue 3.4 开始，推荐的实现方式是使用 [`defineModel()`](https://cn.vuejs.org/api/sfc-script-setup.html#definemodel) 宏：
@@ -96,11 +96,13 @@ __父组件：__
 ```js
 const myRef = ref()
 ```
+
 ``` html
 <Child v-model="myRef"></Child>
 ```
+
 :::
-## v-model 的参数​
+## v-model 的参数​{#v-model-arguments}
 组件上的 v-model 也可以接受一个参数：
 
 ```template
@@ -145,7 +147,7 @@ defineEmits(['update:title'])
 </template>
 ```
 :::
-### 多个 `v-model` 绑定​
+### 多个 `v-model` 绑定​{#multiple-v-model-bindings}
 利用刚才在 v-model 的参数小节中学到的指定参数与事件名的技巧，我们可以在单个组件实例上创建多个 v-model 双向绑定。
 
 组件上的每一个 v-model 都会同步不同的 prop，而无需额外的选项：
@@ -194,7 +196,7 @@ defineEmits(['update:firstName', 'update:lastName'])
 ```
 :::
 
-### 处理 `v-model` 修饰符​
+### 处理 `v-model` 修饰符{#handling-v-model-modifiers}
 在学习输入绑定时，我们知道了 `v-model` 有一些[内置的修饰符](https://cn.vuejs.org/guide/essentials/forms.html#modifiers)，例如 `.trim`，`.number` 和 `.lazy`。在某些场景下，你可能想要一个自定义组件的 `v-model` 支持自定义的修饰符。
 
 我们来创建一个自定义的修饰符 `capitalize`，它会自动将` v-model` 绑定输入的字符串值第一个字母转为大写：
@@ -259,7 +261,7 @@ function emitValue(e) {
 ```
 :::
 
-## 带参数的 v-model 修饰符​
+## 带参数的 v-model 修饰符​{#v-model-modifier-with-arguments}
 这里是另一个例子，展示了如何在使用多个不同参数的 v-model 时使用修饰符：
 
 ```template

@@ -1,7 +1,6 @@
 
-# 计算属性
-
-## 基础示例
+# 计算属性{#computed}
+## 基础示例 {#basic-example}
 
 模板中的表达式虽然方便，但也只能用来做简单的操作。如果在模板中写太多逻辑，会让模板变得臃肿，难以维护。比如说，我们有这样一个包含嵌套数组的对象：
 
@@ -56,10 +55,9 @@ const publishedBooksMessage = computed(() => {
 
 Vue 的计算属性会自动追踪响应式依赖。它会检测到 `publishedBooksMessage` 依赖于 `author.books`，所以当 `author.books` 改变时，任何依赖于 `publishedBooksMessage` 的绑定都会同时更新。
 
-## 计算属性缓存 vs 方法​
+## 计算属性缓存 vs 方法​ {#computed-caching-vs-methods}
 
 你可能注意到我们在表达式中像这样调用一个函数也会获得和计算属性相同的结果：
-
 ``` template
 <p>{{ calculateBooksMessage() }}</p>
 js
@@ -81,7 +79,7 @@ const now = computed(() => Date.now())
 
 为什么需要缓存呢？想象一下我们有一个非常耗性能的计算属性 `list`，需要循环一个巨大的数组并做许多计算逻辑，并且可能也有其他计算属性依赖于 `list`。没有缓存的话，我们会重复执行非常多次 `list` 的 getter，然而这实际上没有必要！如果你确定不需要缓存，那么也可以使用方法调用。
 
-## 可写计算属性​
+## 可写计算属性​ {#writable-computed}
 计算属性默认是只读的。当你尝试修改一个计算属性时，你会收到一个运行时警告。只在某些特殊场景中你可能才需要用到“可写”的属性，你可以通过同时提供 getter 和 setter 来创建：
 
 ``` vue
@@ -107,7 +105,7 @@ const fullName = computed({
 
 现在当你再运行 `fullName.value = 'John Doe'` 时，setter 会被调用而 `firstName` 和 `lastName` 会随之更新。
 
-## 获取上一个值​
+## 获取上一个值​{#previous}
 
 - 仅 3.4+ 支持
 如果需要，可以通过访问计算属性的 getter 的第一个参数来获取计算属性返回的上一个值：
@@ -154,10 +152,10 @@ const alwaysSmall = computed({
 </script>
 ```
 
-## 最佳实践​
+## 最佳实践​{#best-practices}
 
 __Getter__ 不应有副作用​
 计算属性的 getter 应只做计算而没有任何其他的副作用，这一点非常重要，请务必牢记。举例来说，__不要改变其他状态__、__在 getter 中做异步请求或者更改 DOM！__ 一个计算属性的声明中描述的是如何根据其他值派生一个值。因此 getter 的职责应该仅为计算和返回该值。在之后的指引中我们会讨论如何使用[侦听器](/guide/essentials/watchers)根据其他响应式状态的变更来创建副作用。
 
-### 避免直接修改计算属性值​
+### 避免直接修改计算属性值​{#avoid-directly-modifying-computed-value}
 从计算属性返回的值是派生状态。可以把它看作是一个“临时快照”，每当源状态发生变化时，就会创建一个新的快照。更改快照是没有意义的，因此计算属性的返回值应该被视为只读的，并且永远不应该被更改——应该更新它所依赖的源状态以触发新的计算。
