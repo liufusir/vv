@@ -12,7 +12,7 @@ export default defineConfig({
   metaChunk: true,
   // 自定义网站图标
   head: [
-    ["link", { rel: "icon", type: "image/svg+xml", href: "/public/logo.svg" }],
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
   ],
   // 主题配置
   themeConfig: {
@@ -205,8 +205,9 @@ export default defineConfig({
   },
   markdown: {
     gfmAlerts: true,
+    ignoreParsingErrors: true,
     languageAlias: {
-      template: "html",
+      template: "vue",
     },
 
     theme: {
