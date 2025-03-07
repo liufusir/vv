@@ -25,7 +25,7 @@ export default defineConfig({
     // 网站标题
     siteTitle: "Vue.js",
     // 网站图标
-    logo: "/public/logo.svg",
+    logo: "/logo.svg",
     // 可以添加更多 outline 相关的配置项，以下是一些可能的扩展配置示例：
     outlineTitle: "本页",
     // 自定义出现在上一页和下一页链接上方的文本
