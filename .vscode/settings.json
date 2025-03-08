@@ -1,7 +1,10 @@
 {
-    "marscode.chatLanguage": "cn",
-    "marscode.codeCompletionPro": {
-        "enableCodeCompletionPro": true
+    "marscode.chatLanguage": "cn", // 设置 MarsCode 的聊天语言为中文
+    "marscode.codeCompletionPro": { // 配置 MarsCode 的代码补全功能
+        "enableCodeCompletionPro": true, // 启用高级代码补全功能
     },
-    "marscode.enableInlineCommand": true
+    "marscode.enableInlineCommand": true, // 启用 MarsCode 的内联命令功能
+    "editor.tabSize": 4, // 设置一个 TAB 等于 4 个空格
+    "editor.insertSpaces": true, // 启用用空格代替 TAB
+    
 }

@@ -29,9 +29,10 @@ export default defineConfig({
     // 可以添加更多 outline 相关的配置项，以下是一些可能的扩展配置示例：
     outlineTitle: "本页",
     // 自定义出现在上一页和下一页链接上方的文本
+    
     docFooter: {
-      prev: false,
-      next: false,
+      prev: "上一篇",
+      next: "下一篇",
     },
     // 侧边栏配置
     sidebar: {
@@ -153,7 +154,10 @@ export default defineConfig({
             {
               text:"组合式函数",
               link:"composables"
-            },
+            }, {
+                text:"自定义指令",
+                link:"custom-directives"
+            }
           ],
         },
       ],
