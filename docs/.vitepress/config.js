@@ -21,6 +21,8 @@ export default defineConfig({
       provider: "local", // 搜索提供者，local 表示在本地进行搜索
       placeholder: "搜索文档", // 搜索框的占位符文本
       doneLabel: "搜索完成", // 搜索完成后的提示文本
+      disableQueryPersistence: true, // 是否禁用查询持久化，即是否在页面刷新后保留搜索结果
+    //   detailedView: true, // 是否启用详细视图，即是否显示搜索结果的详细信息
     },
     // 网站标题
     siteTitle: "Vue.js",
@@ -157,6 +159,9 @@ export default defineConfig({
             }, {
                 text:"自定义指令",
                 link:"custom-directives"
+            },{
+                text:"插件",
+                link:"plugins"
             }
           ],
         },

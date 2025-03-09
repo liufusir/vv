@@ -6,7 +6,7 @@
         },
     };  
 </script>
-<style scoped
+<style scoped>
     .is-highlight {
         color: #000;
         background:#ff0;

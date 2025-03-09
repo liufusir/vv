@@ -76,3 +76,5 @@
     margin: 10px 0 0
 }
 </style>
+<script setup>
+</script>
