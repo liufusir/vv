@@ -1,0 +1,4 @@
+{
+  "prettier.tabWidth": 4, // 设置 Prettier 的 TAB 宽度为 4 个空格
+  "prettier.useTabs": false // 使用空格代替 TAB
+}

@@ -1,6 +1,6 @@
-# 组件基础{#component-basics}
+# 组件基础
 
-组件允许我们将 UI 划分为独立的、可重用的部分，并且可以对每个部分进行单独的思考。在实际应用中，组件常常被组织成一个层层嵌套的树状结构： ![组件树](/components.B1JZbf0_.png)
+组件允许我们将 UI 划分为独立的、可重用的部分，并且可以对每个部分进行单独的思考。在实际应用中，组件常常被组织成一个层层嵌套的树状结构： ![组件树](/assets/components.B1JZbf0_.png)
 
 这和我们嵌套 HTML 元素的方式类似，Vue 实现了自己的组件模型，使我们可以在每个组件内封装自定义内容与逻辑。Vue 同样也能很好地配合原生 Web Component。如果你想知道 Vue 组件与原生 Web Components 之间的关系，可以[阅读此章节](https://cn.vuejs.org/guide/extras/web-components.html)。
 
@@ -265,7 +265,7 @@ export default {
 
 我们期望能渲染成这样：
 
-::: danger This is an Error for Demo Purposes
+:::danger This is an Error for Demo Purposes
 Something bad happened.
 :::
 这可以通过 Vue 的自定义 `<slot>` 元素来实现：
@@ -373,7 +373,13 @@ const BlogPost = {
 ```
 
 ::: tip TIP
+<<<<<<< HEAD
 当使用在原生 HTML 元素上时，`is` 的值必须加上前缀 `vue:` 才可以被解析为一个 Vue 组件。这一点是必要的，为了避免和原生的[自定义内置元素](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example)相混淆。
+=======
+
+当使用在原生 HTML 元素上时，`is` 的值必须加上前缀 `vue:` 才可以被解析为一个 Vue 组件。这一点是必要的，为了避免和原生的[自定义内置元素](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example)相混淆。
+
+>>>>>>> develop
 :::
 
 以上就是你需要了解的关于 DOM 内模板解析的所有注意事项，同时也是 Vue 基础部分的所有内容。
