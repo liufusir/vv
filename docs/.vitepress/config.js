@@ -164,7 +164,19 @@ export default defineConfig({
                 link:"plugins"
             }
           ],
-        },
+        },{
+            text:"内置组件", 
+            base:"/guide/built-ins/",
+            items:[
+                {
+                    text:"Transition",
+                    link:"transition"
+                },{
+                    text:"Transition-group",
+                    link:"transition-group"
+                }
+            ]
+        }
       ],
     },
 
