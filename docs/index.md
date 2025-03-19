@@ -10,7 +10,7 @@ title: Vue.js - 渐进式 JavaScript 框架
         易学易用，性能出色，适用场景丰富的 Web 前端框架。
     </p>
     <p class="actions">
-        <a class="get-started" href="/guide/introduction">
+        <a class="get-started" href="/dist/guide/introduction">
             快速上手
             <svg class="icon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@ title: Vue.js - 渐进式 JavaScript 框架
                 height="10"
                 viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path></svg>
         </a>
-        <a class="setup" href="/guide/quick-start">安装</a>
+        <a class="setup" href="/dist/guide/quick-start">安装</a>
     </p>
 </section>
 
