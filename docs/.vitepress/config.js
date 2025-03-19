@@ -13,7 +13,7 @@ export default defineConfig({
   base:"/vv/",
   // 自定义网站图标
   head: [
-    ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/vv/logo.svg" }],
   ],
   // 主题配置
   themeConfig: {
