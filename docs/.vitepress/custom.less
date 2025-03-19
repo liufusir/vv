@@ -11,9 +11,13 @@
   --vt-c-yellow: #ffc517;
 }
 /* 为所有可能被锚点定位的元素添加 */
-h2, h3, h4, h5, h6 {
-    scroll-margin-top: 110px; /* 与导航栏高度相同 */
-  }
+h2,
+h3,
+h4,
+h5,
+h6 {
+  scroll-margin-top: 110px; /* 与导航栏高度相同 */
+}
 body {
   font-family: var(--vt-font-family-base);
 }
@@ -86,13 +90,27 @@ body {
           color: var(--vp-c-text-1);
         }
       }
+      .DocSearch-Button-Container span.DocSearch-Button-Placeholder {
+        font-size: 0;
+        margin: 0;
+        padding: 0 10px 0 0;
+        &::before {
+          font-size: 14px;
+          content: "搜索";
+        }
+      }
 
       .DocSearch-Button-Keys kbd {
         border-color: var(--vp-c-divider);
         transition: color 0.5s;
       }
-      .DocSearch-Button-Container span {
+      span.DocSearch-Button-Container span {
         color: var(--vp-c-text-2);
+        line-height: 1;
+      }
+      span.DocSearch-Button-Container span.DocSearch-Search-Icon {
+        width: 15px;
+        height: 15px;
       }
     }
     .VPNavBarMenu .VPNavBarMenuGroup.active span > span {

@@ -373,9 +373,7 @@ const BlogPost = {
 ```
 
 ::: tip TIP
-
 当使用在原生 HTML 元素上时，`is` 的值必须加上前缀 `vue:` 才可以被解析为一个 Vue 组件。这一点是必要的，为了避免和原生的[自定义内置元素](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example)相混淆。
-
 :::
 
 以上就是你需要了解的关于 DOM 内模板解析的所有注意事项，同时也是 Vue 基础部分的所有内容。

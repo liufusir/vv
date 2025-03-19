@@ -22,6 +22,8 @@ export default defineConfig({
       provider: "local", // 搜索提供者，local 表示在本地进行搜索
       placeholder: "搜索文档", // 搜索框的占位符文本
       doneLabel: "搜索完成", // 搜索完成后的提示文本
+      disableQueryPersistence: true, // 是否禁用查询持久化，即是否在页面刷新后保留搜索结果
+    //   detailedView: true, // 是否启用详细视图，即是否显示搜索结果的详细信息
     },
     // 网站标题
     siteTitle: "Vue.js",
@@ -30,9 +32,10 @@ export default defineConfig({
     // 可以添加更多 outline 相关的配置项，以下是一些可能的扩展配置示例：
     outlineTitle: "本页",
     // 自定义出现在上一页和下一页链接上方的文本
+    
     docFooter: {
-      prev: false,
-      next: false,
+      prev: "上一篇",
+      next: "下一篇",
     },
     // 侧边栏配置
     sidebar: {
@@ -154,9 +157,27 @@ export default defineConfig({
             {
               text:"组合式函数",
               link:"composables"
-            },
+            }, {
+                text:"自定义指令",
+                link:"custom-directives"
+            },{
+                text:"插件",
+                link:"plugins"
+            }
           ],
-        },
+        },{
+            text:"内置组件", 
+            base:"/guide/built-ins/",
+            items:[
+                {
+                    text:"Transition",
+                    link:"transition"
+                },{
+                    text:"Transition-group",
+                    link:"transition-group"
+                }
+            ]
+        }
       ],
     },
 

@@ -35,7 +35,7 @@ const { x, y } = useMouse()
 
 相比之下，有状态逻辑负责管理会随时间而变化的状态。一个简单的例子是跟踪当前鼠标在页面中的位置。在实际应用中，也可能是像触摸手势或与数据库的连接状态这样的更复杂的逻辑。
 
-## 鼠标跟踪器示例​{#mouse-tracker-example}
+## 鼠标跟踪器示例 ​{#mouse-tracker-example}
 如果我们要直接在组件中使用组合式 API 实现鼠标跟踪功能，它会是这样的：
 
 ``` vue
@@ -138,7 +138,7 @@ export function useMouse() {
 每一个调用 `useMouse()` 的组件实例会创建其独有的 `x`、`y` 状态拷贝，因此他们不会互相影响。如果你想要在组件之间共享状态，请阅读[状态管](https://cn.vuejs.org/guide/scaling-up/state-management.html)理这一章。
 :::
 
-## 异步状态示例{#async-state-example}​
+## 异步状态示例 {#async-state-example}
 `useMouse()` 组合式函数没有接收任何参数，因此让我们再来看一个需要接收一个参数的组合式函数示例。在做异步数据请求时，我们常常需要处理不同的状态：加载中、加载成功和加载失败。
 
 ``` vue
@@ -245,7 +245,7 @@ export function useFetch(url) {
 这个版本的 `useFetch()` 现在能接收静态 URL 字符串、ref 和 getter，使其更加灵活。watch effect 会立即运行，并且会跟踪 `toValue(url)` 期间访问的任何依赖项。如果没有跟踪到依赖项 (例如 url 已经是字符串)，则 effect 只会运行一次；否则，它将在跟踪到的任何依赖项更改时重新运行。
 
 
-## 约定和最佳实践​　{#conventions-and-best-practices}​
+## 约定和最佳实 ​{#conventions-and-best-practices}
 
 ### 命名​　{#naming}​
 
@@ -307,7 +307,7 @@ Mouse position is at: {{ mouse.x }}, {{ mouse.y }}\
 `<script setup>` 是唯一在调用 `await` **之后**仍可调用组合式函数的地方。编译器会在异步操作之后自动为你恢复当前的组件实例。
 :::
 
-## 通过抽取组合式函数改善代码结构​　{#improving-code-structure-by-extract-composables}​
+## 通过抽取组合式函数改善代码结构​　{#extracting-composables-for-code-organization}
 抽取组合式函数不仅是为了复用，也是为了代码组织。随着组件复杂度的增高，你可能会最终发现组件多得难以查询和理解。组合式 API 会给予你足够的灵活性，让你可以基于逻辑问题将组件代码拆分成更小的函数：
 
 ```vue
@@ -323,7 +323,7 @@ const { qux } = useFeatureC(baz)
 ```
 在某种程度上，你可以将这些提取出的组合式函数看作是可以相互通信的组件范围内的服务。
 
-## 在选项式 API 中使用组合式函数​　{#using-composables-in-options-api}​
+## 在选项式 API 中使用组合式函数​  {#using-composables-in-options-api}
 如果你正在使用选项式 API，组合式函数必须在 `setup()` 中调用。且其返回的绑定必须在 `setup()` 中返回，以便暴露给 `this` 及其模板：
 
 ``` js
@@ -343,7 +343,7 @@ export default {
   // ...其他选项
 }
 ```
-## 与其他模式的比较​　{#comparisons-with-other-patterns}​
+## 与其他模式的比较​　{#comparisons-with-other-patterns}
 ### 和 Mixin 的对比​　{#comparisons-with-mixins}​
 Vue 2 的用户可能会对 [mixins](https://cn.vuejs.org/api/options-composition.html#mixins) 选项比较熟悉。它也让我们能够把组件逻辑提取到可复用的单元里。然而 mixins 有三个主要的短板：
 
@@ -355,7 +355,7 @@ Vue 2 的用户可能会对 [mixins](https://cn.vuejs.org/api/options-compositio
 
 基于上述理由，我们不再推荐在 Vue 3 中继续使用 mixin。保留该功能只是为了项目迁移的需求和照顾熟悉它的用户。
 
-### 和无渲染组件的对比​{#comparisons-with-renderless-components}​
+### 和无渲染组件的对比 ​{#comparisons-with-renderless-components}​
 在组件插槽一章中，我们讨论过了基于作用域插槽的[无渲染组件](https://cn.vuejs.org/guide/components/slots.html#renderless-components)。我们甚至用它实现了一样的鼠标追踪器示例。
 
 组合式函数相对于无渲染组件的主要优势是：组合式函数不会产生额外的组件实例开销。当在整个应用中使用时，由无渲染组件产生的额外组件实例会带来无法忽视的性能开销。

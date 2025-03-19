@@ -4,7 +4,6 @@
 	</div>
 </template>
 
-
 <style>
   :root{
 	--vt-c-bg-mute:#f1f1f1;
@@ -76,3 +75,5 @@
     margin: 10px 0 0
 }
 </style>
+<scrip setup>
+</scrip>
