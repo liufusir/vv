@@ -10,6 +10,7 @@ export default defineConfig({
   lang: "en-us",
   // 打包时将 meta 标签注入到 index.html 中
   metaChunk: true,
+  base:"/dist/",
   // 自定义网站图标
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
