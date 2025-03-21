@@ -2,7 +2,7 @@
 title: Vue.js - 渐进式 JavaScript 框架
 ---
 
-<section id="hero">{{true ? 'html': 'css' }}
+<section id="hero">{{false ? 'html': 'css' }}
     <h1 class="tagline">
         <span class="accent">渐进式</span><br />JavaScript 框架
     </h1>
