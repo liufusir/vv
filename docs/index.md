@@ -3,7 +3,6 @@ title: Vue.js - 渐进式 JavaScript 框架
 ---
 
 <script setup>
-import { d1,d2 } from '/.vitepress/components/demo.vue';
 </script>
 <d1/>
 <d2/>
