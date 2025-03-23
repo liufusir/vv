@@ -2,6 +2,11 @@
 title: Vue.js - 渐进式 JavaScript 框架
 ---
 
+<script setup>
+import { d1,d2 } from '/.vitepress/components/demo.vue';
+</script>
+<d1/>
+<d2/>
 <section id="hero">
     <h1 class="tagline">
         <span class="accent">渐进式</span><br />JavaScript 框架
