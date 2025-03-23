@@ -12,7 +12,7 @@ const d1 = (props, { slots }) => {
     </button>
   );
 };
-const d2 = (props, { slots }) => {
+const d2 = () => {
   return (
     <p>d2</p>
   );
